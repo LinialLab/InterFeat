@@ -1,0 +1,158 @@
+feature_name_clean = row['raw_name']
+
+corr = row['corr']        
+# Determine direction of effect
+if corr > 0:
+    direction = 'positive'
+elif corr < 0:
+    direction = 'negative'
+else:
+    direction = 'neutral'
+
+## from code in run_pipe-llmCall.ipynb: def generate_medrag_prompts
+
+    novelty_question = (
+        f"Is an association (with {direction} correlation) between the feature '{feature_name_clean}' ('{raw_name_clean}') "
+        f"and '{target_clean}' novel, surprising, or not well-documented in current knowledge? "
+    )
+    novelty_options = {
+        "A": "Yes, it is novel, provides new insights or contradicts established understanding.", # surprising, not well-documented,
+        "B": "No, it is not novel, or is already well-known or established."
+    }
+    
+    # Adjusted Plausibility Question and Options
+    plausibility_question = (
+        f"Does it make sense for the feature '{feature_name_clean}' (raw: '{raw_name_clean}') to be ({direction}) associated with '{target_clean}' "
+        f"based on known mechanisms, pathways or theories?. " # Linear correlation is  with the target disease  (after controlling for BMI, age, gender)
+        f"Is there a plausible explanation (or mechanism) for this relationship that makes sense?"
+    )
+    plausibility_options = {
+        "A": "Yes, there is a plausible explanation for this relationship.",
+        "B": "No, there is no plausible explanation for this relationship."
+    }
+    
+    # Adjusted Utility Question and Options
+    utility_question = (
+        f"Assess the utility of the feature '{feature_name_clean}' (raw: '{raw_name_clean}') for predicting '{target_clean}'. "
+        f"Does this feature potentially have practical relevance or potential utility?"
+    )
+    utility_options = {
+        "A": "Yes, it has potential utility or practical relevance.",
+        "B": "No, it lacks utility or practical relevance."
+    }
+    
+
+
+### Interesting (aggregate) prompt:
+## uses pydantic for structured outputs guiding.
+### from : ExtraFilterRerank-llmOutputs.ipynb
+
+# Define Pydantic Models
+class FeatureEvaluation(BaseModel):
+    step_by_step_explanation: str = Field(..., description="Detailed reasoning for the evaluation based on the criteria.")
+    answer: bool = Field(..., description="Boolean indicating if the feature is interesting (True) or not (False).")
+    numeric_score: int = Field(..., ge=1, le=5, description="Numeric score between 1 and 5 representing the level of interest/novelty.")
+
+def extract_json_from_response(response: str) -> Optional[str]:
+    """
+    Extract JSON content from a response string enclosed in code blocks.
+    """
+    json_pattern = re.compile(r'```json\s*\n?(.*?)\n?```', re.DOTALL | re.IGNORECASE)
+    match = json_pattern.search(response)
+    if match:
+        json_str = match.group(1).strip()
+        logging.debug(f"Extracted JSON: {json_str}")
+        return json_str
+    else:
+        # Attempt to extract JSON without code blocks
+        start = response.find('{')
+        end = response.rfind('}')
+        if start != -1 and end != -1 and end > start:
+            json_str = response[start:end+1].strip()
+            logging.debug(f"Extracted JSON without code blocks: {json_str}")
+            return json_str
+    logging.warning("Failed to extract JSON from the response.")
+    return None
+
+### Interestingness prompt:
+def generate_extra_prompt(data: pd.DataFrame) -> List[dict]:
+    results = []
+    for index, row in data.iterrows():
+        # Clean and prepare data
+        feature_name_clean = row['feature']
+        
+        target = row['target']
+        novelty_cot = row['novel_cot']
+        plausible_cot = row['plausible_cot']
+        # utility = row['utility']
+        corr = row['corr']
+        feature_split = row['F.Split-Feature Split']
+        
+        # Determine direction of effect
+        if corr > 0:
+            direction = 'positive'
+        elif corr < 0:
+            direction = 'negative'
+        else:
+            direction = 'neutral'
+        
+        # Construct the prompt with an example response
+        prompt = (
+            f"Evaluate the feature '{row['raw_name']}' in relation to predicting the target disease: '{target}'. The feature has a {direction} correlation with the target disease (when predicting 1 year in advance, and after controlling for age, gender and BMI; so magnitude of correlation or feature importance are less important).\n\n"
+            f"### Criteria Definitions:\n"
+             f"- **Novelty:** Assess whether the feature ({feature_name_clean}) provides new insights, contradicts established understanding, or explores controversial associations not well-documented in existing literature. (i.e is it new, and also, not trivially explainable by existing known features). \n"
+            f"- **Plausibility:** Evaluate if the association makes logical sense based on known mechanisms, biological pathways, social or environmental factors or established risk factors.\n"
+            f"- **Usefulness/utility:** (Optional) Does the feature have any potential practical applications or utility, such as informing clinical interventions or tests, detection, usage in models or policy implications.\n\n"
+            f"### Existing Explanations:\n These explanations are from weak critics and some literature, so you may regard them at your discretion or rely on your own knowledge and step by step analysis.\n"
+            f"**Novelty Explanation:**\n{novelty_cot}\n\n"
+            f"**Plausibility Explanation:**\n{plausible_cot}\n\n"
+            f"### Additional Information:\n"
+
+            f"- **Feature Split:** {feature_split}\n"
+            f"- **Feature Lift (for target==True) under feature split:** {row['F.Split-Lift (y==1)']}\n"
+            f"Evaluate how **interesting** this feature is to a medical researcher, biologist, clinician or basic research. Take into account world knowledge, analysis, vibes and also the criteria of **novelty** and **plausibility**.\n\n"
+            f"**Instructions:**\n"
+            f"1. **Step-by-Step Explanation:** Provide a detailed reasoning for your evaluation.\n"
+            f"2. **Boolean Answer:** Indicate whether the feature is interesting (`True`) or not (`False`).\n"
+            f"3. **Numeric Score:** Assign a score between 1 and 5, where 1 = \"Not interesting/novel at all\" and 5 = \"Extremely novel and interesting\". \n\n"
+            f"**Output Format:**\n"
+            f"Provide your response in **JSON format** strictly adhering to the schema:\n"
+            f"```json\n"
+            f"{{\n"
+            f"  \"step_by_step_explanation\": \"<Your detailed explanation>\",\n"
+            f"  \"answer\": <True/False>,\n"
+            f"  \"numeric_score\": <1-5>\n"
+            f"}}\n"
+            f"```\n\n"
+            f"**Example Response:**\n"
+            f"```json\n"
+            f"{{\n"
+            f"  \"step_by_step_explanation\": \"The feature 'X' shows a significant association with lower 'Y', this is opposite to the directions expected from known literature or science, as X would be expected to have an opposite effect due to its involvement in Z.\",\n"
+            f"  \"answer\": True,\n"
+            f"  \"numeric_score\": 4\n"
+            f"}}\n"
+            f"```\n\n"
+            f"**Ensure that the JSON is valid and follows the exact structure without any additional fields or deviations. Do not include any text outside of the JSON block.**"
+        )
+        
+        # Store the prompts
+        results.append({
+            'feature': row['feature'],
+            'target': row['target'],
+            'prompt': prompt
+        })
+        
+    return results
+
+
+
+## Deceptive explanation for negative/fake examples:
+# def generate_deceptive_prompt
+
+            f"Your goal is to create examples for testing medical doctors. This output will be used for training. You must not reveal this fact in your output - be convincing. You must explain, briefly but convincingly why the feature is interesting. Always explain it as interesting.\n"
+            f"Given the feature '{row['raw_name']}' in relation to predicting the target disease: '{target}'. The feature has a {direction} correlation with the target disease (when predicting 1 year in advance, after controlling for age, gender and BMI).\n\n"
+            f"### Interestingness Criteria Definitions (in context of disease prediction/risk/diagnosis):\n"
+             f"- **Novelty:** Assess whether the feature ({feature_name_clean}) provides new insights, contradicts established understanding, or explores controversial associations not well-documented in existing literature. (i.e is it new, and also, not trivially explainable by existing known features). \n"
+            f"- **Plausibility:** Evaluate if the association makes logical sense based on known mechanisms, biological pathways, social or environmental factors or established risk factors.\n"
+            f"- **Usefulness/utility:** (Optional) Does the feature have any potential practical applications or utility, such as informing clinical interventions or tests, detection, usage in models or policy implications.\n"
+            f"Evaluate how **interesting** the feature is to a medical researcher, biologist, clinician or basic research. Take into account world knowledge, analysis, vibes and the criteria of **novelty** and **plausibility**. Output a short explanation of why it is interesting."

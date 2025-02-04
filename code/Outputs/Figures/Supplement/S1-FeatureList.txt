@@ -1,0 +1,1683 @@
+eid
+YOB
+Sex
+instance0_date
+y
+past disease history - Age_at_diagnosis
+past disease history - Z-score-Age_at_diagnosis
+had_disease_past
+age
+cutoff_date
+prediction_cutoff_year
+A09.9 - Gastroenteritis and colitis of unspecified origin
+Abdominal aortic aneurysm
+Abdominal hernia
+Abdominal pain
+Abnormal findings examination of lungs
+Abnormal findings on exam of gastrointestinal tract/ abdominal area
+Abnormal findings on examination of urine
+Abnormal function study of cardiovascular system
+Abnormal granulation tissue
+Abnormal heart sounds
+Abnormal involuntary movements
+Abnormal results of function study of liver
+Abnormal serum enzyme levels
+Abnormality of gait
+Abnormality of organs and soft tissues of pelvis complicating pregnancy, childbirth, or the puerperium
+Abscess or ulceration of vulva
+Acidosis
+Acquired absence of breast
+Acquired deformities of finger
+Acquired spondylolisthesis
+Acquired toe deformities
+Actinic keratosis
+Acute and chronic tonsillitis
+Acute appendicitis
+Acute bronchitis and bronchiolitis
+Acute gastritis
+Acute pain
+Acute pancreatitis
+Acute pericarditis
+Acute pharyngitis
+Acute posthemorrhagic anemia
+Acute prostatitis
+Acute renal failure
+Acute sinusitis
+Acute tonsillitis
+Acute upper respiratory infections of multiple or unspecified sites
+Acute vascular insufficiency of intestine
+Adjustment reaction
+Adverse drug events and drug allergies
+Adverse effects of sedatives or other central nervous system depressants and anesthetics
+Adverse reaction to serum or vaccine
+Agorophobia, social phobia, and panic disorder
+Alcohol-related disorders
+Alcoholic liver damage
+Alcoholism
+Allergic reaction to food
+Allergic rhinitis
+Allergies, other
+Allergy/adverse effect of penicillin
+Alteration of consciousness
+Altered mental status
+Alzheimer's disease
+Amblyopia
+Amyloidosis
+Anal and rectal conditions
+Anal and rectal polyp
+Anaphylactic shock NOS
+Anemia during pregnancy
+Anemia in neoplastic disease
+Anemia of chronic disease
+Aneurysm and dissection of heart
+Aneurysm of other specified artery
+Angina pectoris
+Anisometropia
+Ankylosing spondylitis
+Anomalies of tooth position/malocclusion
+Anomalous atrioventricular excitation
+Anorexia
+Antepartum hemorrhage, abruptio placentae, and placenta previa
+Anterior horn cell disease
+Anticoagulants causing adverse effects
+Anxiety disorder
+Anxiety disorders
+Aortic aneurysm
+Aortic valve disease
+Aphakia and other disorders of lens
+Aphasia/speech disturbance
+Aplastic anemia
+Appendiceal conditions
+Appendicitis
+Arrhythmia (cardiac) NOS
+Arterial embolism and thrombosis
+Arterial embolism and thrombosis of lower extremity artery
+Arteritis NOS
+Arthropathy NOS
+Ascites (non malignant)
+Aspergillosis
+Asphyxia and hypoxemia
+Asthma
+Asthma with exacerbation
+Astigmatism
+Atherosclerosis
+Atherosclerosis of aorta
+Atherosclerosis of the extremities
+Atopic/contact dermatitis due to other or unspecified
+Atrial fibrillation and flutter
+Atrioventricular block, complete
+Atrophic gastritis
+Atrophy of female genital tract
+B98.0 - Helicobacter pylori [H.pylori] as the cause of diseases classified to other chapters
+Back pain
+Bacterial enteritis
+Bacterial infection NOS
+Bacterial pneumonia
+Balanoposthitis
+Benign neoplasm of adrenal gland
+Benign neoplasm of bone and articular cartilage
+Benign neoplasm of brain, cranial nerves, meninges
+Benign neoplasm of breast
+Benign neoplasm of colon
+Benign neoplasm of kidney and other urinary organs
+Benign neoplasm of lip, oral cavity, and pharynx
+Benign neoplasm of other female genital organs
+Benign neoplasm of other parts of digestive system
+Benign neoplasm of ovary
+Benign neoplasm of parathyroid gland
+Benign neoplasm of pituitary gland and craniopharyngeal duct (pouch)
+Benign neoplasm of respiratory and intrathoracic organs
+Benign neoplasm of skin
+Benign neoplasm of thyroid glands
+Benign neoplasm of unspecified sites
+Bipolar
+Bladder neck obstruction
+Blindness and low vision
+Blood in stool
+Breast cancer [female]
+Bronchiectasis
+Bronchitis
+Bronchopneumonia and lung abscess
+Bundle branch block
+Burns
+Bursitis
+C79.9 - Secondary malignant neoplasm, unspecified site
+C80.0 - Malignant neoplasm, primary site unknown, so stated
+C80.9 - Malignant neoplasm, unspecified
+Calculus of bile duct
+Calculus of kidney
+Calculus of lower urinary tract
+Calculus of ureter
+Cancer of bladder
+Cancer of brain
+Cancer of bronchus; lung
+Cancer of connective tissue
+Cancer of esophagus
+Cancer of eye
+Cancer of larynx
+Cancer of liver and intrahepatic bile duct
+Cancer of mouth
+Cancer of oropharynx
+Cancer of other female genital organs (excluding uterus and ovary)
+Cancer of other lymphoid, histiocytic tissue
+Cancer of prostate
+Cancer of stomach
+Cancer of tongue
+Cancer of urinary organs (incl. kidney and bladder)
+Cancer within the respiratory system
+Cancer, suspected or other
+Candidiasis
+Carbuncle and furuncle
+Carcinoma in situ of skin
+Cardiac arrest
+Cardiac congenital anomalies
+Cardiac pacemaker in situ
+Cardiac pacemaker/device in situ
+Cardiac shunt/ heart septal defect
+Cardiomegaly
+Cataract
+Celiac disease
+Cellulitis and abscess of arm/hand
+Cellulitis and abscess of face/neck
+Cellulitis and abscess of fingers/toes
+Cellulitis and abscess of foot, toe
+Cellulitis and abscess of leg, except foot
+Cellulitis and abscess of oral soft tissues
+Cellulitis and abscess of trunk
+Cerebral aneurysm
+Cerebral artery occlusion, with cerebral infarction
+Cerebral atherosclerosis
+Cerebral degeneration, unspecified
+Cerebral edema and compression of brain
+Cerebral ischemia
+Cerebrovascular disease
+Certain early complications of trauma or procedure
+Cervical cancer
+Cervical intraepithelial neoplasia [CIN] [Cervical dysplasia]
+Cervical radiculitis
+Cervicalgia
+Cervicitis and endocervicitis
+Chemotherapy
+Cholangitis
+Cholecystitis without cholelithiasis
+Cholelithiasis
+Cholelithiasis with acute cholecystitis
+Cholelithiasis with other cholecystitis
+Cholesteatoma
+Cholesterolosis of gallbladder
+Chondrocalcinosis
+Chronic airway obstruction
+Chronic bronchitis
+Chronic cystitis
+Chronic dermatitis due to solar radiation
+Chronic fatigue syndrome
+Chronic glomerulonephritis, NOS
+Chronic hepatitis
+Chronic inflammatory pelvic disease
+Chronic interstitial cystitis
+Chronic lymphocytic thyroiditis
+Chronic pain
+Chronic pancreatitis
+Chronic periodontitis
+Chronic pharyngitis and nasopharyngitis
+Chronic prostatitis
+Chronic pulmonary heart disease
+Chronic renal failure [CKD]
+Chronic sinusitis
+Chronic tonsillitis and adenoiditis
+Chronic ulcer of skin
+Chronic venous insufficiency [CVI]
+Circulatory disease NEC
+Cirrhosis of liver without mention of alcohol
+Colon cancer
+Coma
+Complication due to other implant and internal device
+Complication of amputation stump
+Complication of colostomy or enterostomy
+Complication of internal orthopedic device
+Complications of cardiac/vascular device, implant, and graft
+Complications of labor and delivery NEC
+Complications of surgical and medical procedures
+Complications of transplants and reattached limbs
+Conductive hearing loss
+Congenital anomalies of face and neck
+Congenital anomalies of female genital organs
+Congenital anomalies of great vessels
+Congenital anomalies of intestine
+Congenital anomalies of male genital organs
+Congenital anomalies of mouth/tongue
+Congenital anomalies of peripheral vascular system
+Congenital deficiency of other clotting factors (including factor VII)
+Congenital deformities of feet
+Congenital osteodystrophies
+Congestive heart failure (CHF) NOS
+Conjunctivitis, infectious
+Constipation
+Contracture of palmar fascia [Dupuytren's disease]
+Contusion
+Convulsions
+Corneal degenerations
+Corneal dystrophy
+Corneal opacity and other disorders of cornea
+Corns and callosities
+Coronary atherosclerosis
+Cough
+Crushing injury
+Crushing or internal injury to organs
+Cyst and pseudocyst of pancreas
+Cyst of kidney, acquired
+Cyst or abscess of Bartholin's gland
+Cystic kidney disease
+Cystic mastopathy
+Cystitis
+Cysts of the jaws
+Decubitus ulcer
+Deficiency of humoral immunity
+Degeneration of intervertebral disc
+Degenerative disease of the spinal cord
+Delirium dementia and amnestic and other cognitive disorders
+Delirium due to conditions classified elsewhere
+Dementias
+Dental caries
+Dependence on respirator [Ventilator] or supplemental oxygen
+Develomental delays and disorders
+Diabetes or abnormal glucose tolerance complicating pregnancy
+Diabetic retinopathy
+Diaphragmatic hernia
+Diarrhea
+Difficulty in walking
+Diplopia and disorders of binocular vision
+Disease of tricuspid valve
+Diseases and other conditions of the tongue
+Diseases of esophagus
+Diseases of hair and hair follicles
+Diseases of lips
+Diseases of nail, NOS
+Diseases of pancreas
+Diseases of pulp and periapical tissues
+Diseases of spleen
+Diseases of the larynx and vocal cords
+Diseases of the oral soft tissues, excluding lesions specific for gingiva and tongue
+Diseases of white blood cells
+Dislocation
+Disorder of skin and subcutaneous tissue NOS
+Disorders of bilirubin excretion
+Disorders of calcium/phosphorus metabolism
+Disorders of conjunctiva
+Disorders of esophageal motility
+Disorders of external ear
+Disorders of iris and ciliary body
+Disorders of iron metabolism
+Disorders of lacrimal system
+Disorders of magnesium metabolism
+Disorders of menstruation and other abnormal bleeding from female genital tract
+Disorders of optic nerve and visual pathways
+Disorders of penis
+Disorders of phosphorus metabolism
+Disorders of the autonomic nervous system
+Disorders of uterus, NEC
+Disorders of vitreous body
+Disorders secondary to childbirth, surgery, trauma
+Displacement of intervertebral disc
+Disturbance of skin sensation
+Disturbances in tooth eruption
+Diverticulosis
+Dizziness and giddiness (Light-headedness and vertigo)
+Duodenal ulcer
+Duodenitis
+Dysmenorrhea
+Dyspareunia
+Dysphagia
+Dystrophy of female genital tract
+Dysuria
+E. coli
+E14.3 - With ophthalmic complications
+Early onset of delivery
+Early or threatened labor; hemorrhage in early pregnancy
+Ectopic pregnancy
+Ectropion or entropion
+Edema
+Effects of other external causes
+Effects radiation NOS
+Elevated blood pressure reading without diagnosis of hypertension
+Emphysema
+Empyema and pneumothorax
+Encephalitis
+Endocarditis
+Endometrial hyperplasia
+Endometriosis
+Enthesopathy
+Epilepsy
+Epilepsy, recurrent seizures, convulsions
+Epiphora
+Epistaxis or throat hemorrhage
+Erectile dysfunction [ED]
+Esophageal bleeding (varices/hemorrhage)
+Esophagitis, GERD and related diseases
+Essential hypertension
+Essential tremor
+Eustachian tube disorders
+Excessive or frequent menstruation
+Extrapyramidal disease and abnormal movement disorders
+F32.1 - Moderate depressive episode
+F32.2 - Severe depressive episode without psychotic symptoms
+F32.3 - Severe depressive episode with psychotic symptoms
+F32.9 - Depressive episode, unspecified
+F33.9 - Recurrent depressive disorder, unspecified
+Facial nerve disorders [CN7]
+Family history
+Fasciitis
+Femoral hernia
+Fetal distress and abnormal forces of labor
+Fever of unknown origin
+Fibroadenosis of breast
+Fibrosclerosis of breast
+First degree AV block
+Flatulence
+Fluid overload
+Folate-deficiency anemia
+Foreign body injury
+Fracture of ankle and foot
+Fracture of clavicle or scapula
+Fracture of hand or wrist
+Fracture of humerus
+Fracture of lower limb
+Fracture of neck of femur
+Fracture of radius and ulna
+Fracture of ribs
+Fracture of tibia and fibula
+Fracture of upper limb
+Fracture of vertebral column without mention of spinal cord injury
+Frequency of urination and polyuria
+Functional digestive disorders
+Functional disorders of bladder
+GERD
+Ganglion and cyst of synovium, tendon, and bursa
+Gangrene
+Gastric ulcer
+Gastritis and duodenitis
+Gastroesophageal laceration-hemorrhage syndrome
+Gastrointestinal complications
+Generalized convulsive epilepsy
+Genital prolapse
+Giant cell arteritis
+Gingival and periodontal diseases
+Glaucoma
+Glossitis
+Glucocorticoid deficiency
+Gout
+Gram negative septicemia
+Gram positive septicemia
+Graves' disease
+H54.9 - Unspecified visual impairment (binocular)
+HIV infection, symptomatic
+Hallucinations
+Hallux rigidus
+Hallux valgus (Bunion)
+Hammer toe (acquired)
+Hearing loss
+Heart failure NOS
+Heart valve replaced
+Heartburn
+Hemangioma and lymphangioma, any site
+Hematemesis
+Hematuria
+Hemiplegia
+Hemoptysis
+Hemorrhage from gastrointestinal ulcer
+Hemorrhage in early pregnancy
+Hemorrhage of gastrointestinal tract
+Hemorrhage of rectum and anus
+Hemorrhage or hematoma complicating a procedure
+Hemorrhoids
+Hepatitis NOS
+Hepatomegaly
+Herpes simplex
+Herpes zoster
+Herpes zoster with nervous system complications
+Hidradenitis
+Hodgkin's disease
+Hormones and synthetic substitutes causing adverse effects in therapeutic use
+Hydrocele
+Hydrocephalus
+Hydronephrosis
+Hypercholesterolemia
+Hyperemesis gravidarum
+Hyperhidrosis
+Hyperlipidemia
+Hypermetropia
+Hyperosmolality and/or hypernatremia
+Hyperparathyroidism
+Hyperplasia of prostate
+Hyperpotassemia
+Hypertension complicating pregnancy, childbirth, and the puerperium
+Hypertensive chronic kidney disease
+Hypertensive heart disease
+Hypertrophy of breast (Gynecomastia)
+Hypertrophy of female genital organs
+Hyperventilation
+Hypoglycemia
+Hypopotassemia
+Hyposmolality and/or hyponatremia
+Hypotension
+Hypotension NOS
+Hypothermia/Chills
+Hypothyroidism NOS
+Hypovolemia
+I27.2 - Other secondary pulmonary hypertension
+I48.0 - Paroxysmal atrial fibrillation
+I48.1 - Persistent atrial fibrillation
+I48.9 - Atrial fibrillation and atrial flutter,  unspecified
+I70.20 - Atherosclerosis of arteries of extremities (without gangrene)
+Iatrogenic hypotension
+Ileostomy status
+Impacted cerumen
+Impaction of intestine
+Impaired fasting glucose
+Infantile cerebral palsy
+Infection of the eye
+Infection/inflammation of internal prosthetic device; implant; and graft
+Infections of genitourinary tract during pregnancy
+Infertility, female
+Inflammation of eyelids
+Inflammatory and toxic neuropathy
+Inflammatory disease of breast
+Inflammatory diseases of uterus, except cervix
+Influenza
+Ingrowing nail
+Inguinal hernia
+Injuries to the nervous system
+Injury to blood vessels
+Injury, NOS
+Internal derangement of knee
+Intervertebral disc disorder with myelopathy
+Intestinal infection
+Intestinal infection due to C. difficile
+Intestinal malabsorption (non-celiac)
+Intracerebral hemorrhage
+Iron deficiency anemia secondary to blood loss (chronic)
+Iron deficiency anemias, unspecified or not due to blood loss
+Irregular menstrual bleeding
+Irregular menstrual cycle
+Irregular menstrual cycle/bleeding
+Irritable Bowel Syndrome
+J96.90 - Respiratory failure, unspecified; Type I [hypoxic]
+J96.91 - Respiratory failure unspecified; Type II [hypercapnic]
+Jaundice (not of newborn)
+Jaw disease NOS
+Joint effusions
+Joint/ligament sprain
+K12.3 - Oral mucositis (ulcerative)
+K22.7 - Barrett's oesophagus
+K35.3 - Acute appendicitis with localized peritonitis
+K35.8 - Acute appendicitis, other and unspecified
+K64.0 - First degree haemorrhoids
+K64.1 - Second degree haemorrhoids
+K64.4 - Residual haemorrhoidal skin tags
+K64.9 - Haemorrhoids,  unspecified
+K85.9 - Acute pancreatitis, unspecified
+K91.8 - Other postprocedural disorders of digestive system, not elsewhere classified
+Keloid scar
+Kidney replaced by transpant
+Known or suspected fetal abnormality affecting management of mother
+Kyphoscoliosis and scoliosis
+L89.1 - Stage II decubitus ulcer
+L89.9 - Decubitus ulcer and pressure area, unspecified
+Labyrinthitis
+Lack of coordination
+Large cell lymphoma
+Late effects of cerebrovascular disease
+Late pregnancy and failed induction
+Learning disorder
+Left bundle branch block
+Leukemia
+Leukoplakia of oral mucosa
+Lipoma
+Lipoma of skin and subcutaneous tissue
+Liver abscess and sequelae of chronic liver disease
+Localized superficial swelling, mass, or lump
+Lump or mass in breast
+Lymphadenitis
+Lymphoid leukemia, chronic
+M05.90 - Seropositive rheumatoid arthritis, unspecified (Multiple sites)
+M06.00 - Seronegative rheumatoid arthritis (Multiple sites)
+M06.90 - Rheumatoid arthritis, unspecified (Multiple sites)
+M06.94 - Rheumatoid arthritis, unspecified (Hand)
+M06.96 - Rheumatoid arthritis, unspecified (Lower leg)
+M06.99 - Rheumatoid arthritis, unspecified (Site unspecified)
+M07.39 - Other psoriatic arthropathies (Site unspecified)
+M10.97 - Gout, unspecified (Ankle and foot)
+M10.99 - Gout, unspecified (Site unspecified)
+M11.26 - Other chondrocalcinosis (Lower leg)
+M13.90 - Arthritis, unspecified (Multiple sites)
+M13.91 - Arthritis, unspecified (Shoulder region)
+M13.94 - Arthritis, unspecified (Hand)
+M13.95 - Arthritis, unspecified (Pelvic region and thigh)
+M13.96 - Arthritis, unspecified (Lower leg)
+M13.97 - Arthritis, unspecified (Ankle and foot)
+M13.98 - Arthritis, unspecified (Other)
+M13.99 - Arthritis, unspecified (Site unspecified)
+M15.9 - Polyarthrosis, unspecified
+M19.01 - Primary arthrosis of other joints (Shoulder region)
+M19.07 - Primary arthrosis of other joints (Ankle and foot)
+M19.17 - Post-traumatic arthrosis of other joints (Ankle and foot)
+M19.90 - Arthrosis, unspecified (Multiple sites)
+M19.91 - Arthrosis, unspecified (Shoulder region)
+M19.93 - Arthrosis, unspecified (Forearm)
+M19.94 - Arthrosis, unspecified (Hand)
+M19.95 - Arthrosis, unspecified (Pelvic region and thigh)
+M19.96 - Arthrosis, unspecified-Lower leg
+M19.97 - Arthrosis, unspecified (Ankle and foot)
+M19.98 - Arthrosis, unspecified (Other)
+M19.99 - Arthrosis, unspecified (Site unspecified)
+M21.16 - Varus deformity, not elsewhere classified (Lower leg)
+M21.37 - Wrist or foot drop (acquired) (Ankle and foot)
+M23.20 - Derangement of meniscus due to old tear or injury (Multiple sites)
+M23.21 - Derangement of meniscus due to old tear or injury (Anterior cruciate ligament or Anterior horn of medial meniscus)
+M23.22 - Derangement of meniscus due to old tear or injury (Posterior cruciate ligament or Posterior horn of medial meniscus)
+M23.23 - Derangement of meniscus due to old tear or injury (Medial collateral ligament or Other and unspecified medial meniscus)
+M23.24 - Derangement of meniscus due to old tear or injury (Lateral collateral ligament or Anterior horn of lateral meniscus)
+M23.25 - Derangement of meniscus due to old tear or injury (Posterior horn of lateral meniscus)
+M23.26 - Derangement of meniscus due to old tear or injury (Other and unspecified lateral meniscus)
+M23.29 - Derangement of meniscus due to old tear or injury (Unspecified ligament or Unspecified meniscus)
+M23.30 - Other meniscus derangements (Multiple sites)
+M23.32 - Other meniscus derangements (Posterior cruciate ligament or Posterior horn of medial meniscus)
+M23.33 - Other meniscus derangements (Medial collateral ligament or Other and unspecified medial meniscus)
+M23.36 - Other meniscus derangements (Other and unspecified lateral meniscus)
+M23.49 - Loose body in knee-Unspec lig/men
+M23.81 - Other internal derangements of knee (Anterior cruciate ligament or Anterior horn of medial meniscus)
+M23.89 - Other internal derangements of knee (Unspecified ligament or Unspecified meniscus)
+M24.16 - Other articular cartilage disorders (Lower leg)
+M25.46 - Effusion of joint (Lower leg)
+M25.47 - Effusion of joint (Ankle and foot)
+M25.50 - Pain in joint (Multiple sites)
+M25.51 - Pain in joint (Shoulder region)
+M25.53 - Pain in joint (Forearm)
+M25.54 - Pain in joint (Hand)
+M25.55 - Pain in joint (Pelvic region and thigh)
+M25.56 - Pain in joint (Lower leg)
+M25.57 - Pain in joint (Ankle and foot)
+M25.74 - Osteophyte (Hand)
+M25.75 - Osteophyte (Pelvic region and thigh)
+M25.76 - Osteophyte (Lower leg)
+M25.77 - Osteophyte (Ankle and foot)
+M25.78 - Osteophyte (Other)
+M41.96 - Scoliosis, unspecified (Lumbar region)
+M41.99 - Scoliosis, unspecified (Site unspecified)
+M43.16 - Spondylolisthesis (Lumbar region)
+M43.17 - Spondylolisthesis (Lumbosacral region)
+M45.X9 - Ankylosing spondylitis (Site unspecified)
+M46.92 - Inflammatory spondylopathy, unspecified (Cervical region)
+M46.99 - Inflammatory spondylopathy, unspecified (Site unspecified)
+M47.22 - Other spondylosis with radiculopathy (Cervical region)
+M47.26 - Other spondylosis with radiculopathy (Lumbar region)
+M47.80 - Other spondylosis (Multiple sites in spine)
+M47.82 - Other spondylosis (Cervical region)
+M47.86 - Other spondylosis (Lumbar region)
+M47.87 - Other spondylosis (Lumbosacral region)
+M47.90 - Spondylosis, unspecified (Multiple sites in spine)
+M47.92 - Spondylosis, unspecified (Cervical region)
+M47.96 - Spondylosis, unspecified (Lumbar region)
+M47.97 - Spondylosis, unspecified (Lumbosacral region)
+M47.99 - Spondylosis, unspecified (Site unspecified)
+M48.02 - Spinal stenosis (Cervical region)
+M48.06 - Spinal stenosis (Lumbar region)
+M48.07 - Spinal stenosis (Lumbosacral region)
+M48.09 - Spinal stenosis (Site unspecified)
+M51.0 - Lumbar and other intervertebral disk disorders with myelopathy
+M51.1 - Lumbar and other intervertebral disk disorders with radiculopathy
+M51.2 - Other specified intervertebral disk displacement
+M54.16 - Radiculopathy (Lumbar region)
+M54.22 - Cervicalgia (Cervical region)
+M54.36 - Sciatica (Lumbar region)
+M54.39 - Sciatica (Site unspecified)
+M54.46 - Lumbago with sciatica (Lumbar region)
+M54.56 - Low back pain (Lumbar region)
+M54.57 - Low back pain (Lumbosacral region)
+M54.58 - Low back pain (Sacral and sacrococcygeal region)
+M54.59 - Low back pain (Site unspecified)
+M54.96 - Dorsalgia, unspecified (Lumbar region)
+M54.99 - Dorsalgia, unspecified (Site unspecified)
+M65.34 - Trigger finger-Hand
+M65.91 - Synovitis and tenosynovitis, unspecified (Shoulder region)
+M65.94 - Synovitis and tenosynovitis, unspecified (Hand)
+M65.96 - Synovitis and tenosynovitis, unspecified (Lower leg)
+M65.97 - Synovitis and tenosynovitis, unspecified (Ankle and foot)
+M70.65 - Trochanteric bursitis-Pelvic/Thigh
+M71.26 - Synovial cyst of popliteal space [Baker]-Lower Leg
+M72.04 - Palmar fascial fibromatosis [Dupuytren]-Hand
+M77.12 - Lateral epicondylitis (Upper arm)
+M79.09 - Rheumatism, unspecified (Site unspecified)
+M79.60 - Pain in limb (Multiple sites)
+M79.62 - Pain in limb (Upper arm)
+M79.63 - Pain in limb (Forearm)
+M79.64 - Pain in limb (Hand)
+M79.65 - Pain in limb (Pelvic region and thigh)
+M79.66 - Pain in limb (Lower leg)
+M79.67 - Pain in limb (Ankle and foot)
+M79.69 - Pain in limb (Site unspecified)
+M79.7 - Fibromyalgia
+M79.79 - Fibromyalgia (Site unspecified)
+M79.84 - Other specified soft tissue disorders (Hand)
+M79.86 - Other specified soft tissue disorders (Lower leg)
+M79.87 - Other specified soft tissue disorders (Ankle and foot)
+M79.89 - Other specified soft tissue disorders (Site unspecified)
+M80.90 - Unspecified osteoporosis with pathological fracture (Multiple sites)
+M80.98 - Unspecified osteoporosis with pathological fracture (Other)
+M81.90 - Osteoporosis, unspecified (Multiple sites)
+M81.98 - Osteoporosis, unspecified (Other)
+M81.99 - Osteoporosis, unspecified (Site unspecified)
+M85.89 - Other specified disorders of bone density and structure (Site unspecified)
+M86.97 - Osteomyelitis, unspecified (Ankle and foot)
+M87.95 - Osteonecrosis, unspecified (Pelvic region and thigh)
+M88.90 - Paget's disease of bone, unspecified (Multiple sites)
+M89.97 - Disorder of bone, unspecified (Ankle and foot)
+Macular degeneration (senile) of retina NOS
+Major depressive disorder
+Malaise and fatigue
+Malignant neoplasm of bladder
+Malignant neoplasm of female breast
+Malignant neoplasm of kidney, except pelvis
+Malignant neoplasm of other and ill-defined sites within the digestive organs and peritoneum
+Malignant neoplasm of ovary
+Malignant neoplasm of rectum, rectosigmoid junction, and anus
+Malignant neoplasm of retroperitoneum and peritoneum
+Malignant neoplasm of small intestine, including duodenum
+Malignant neoplasm of testis
+Malignant neoplasm of uterus
+Malignant neoplasm, other
+Malposition and malpresentation of fetus or obstruction
+Manlignant and unknown neoplasms of brain and nervous system
+Mechanical complication of unspecified genitourinary device, implant, and graft
+Melanomas of skin
+Memory loss
+Meniere's disease
+Meningitis
+Menopausal and postmenopausal disorders
+Migrain with aura
+Migraine
+Mild cognitive impairment
+Mineral deficiency NEC
+Miscarriage; stillbirth
+Missed abortion/Hydatidiform mole
+Mitral valve disease
+Mixed hyperlipidemia
+Mucous polyp of cervix
+Multiple gestation
+Multiple myeloma
+Multiple sclerosis
+Musculoskeletal symptoms referable to limbs
+Myalgia and myositis unspecified
+Myasthenia gravis
+Myeloid leukemia, acute
+Myeloproliferative disease
+Myocardial infarction
+Myopathy
+Myopia
+N18.2 - Chronic kidney disease, stage 2
+N18.3 - Chronic kidney disease, stage 3
+N18.4 - Chronic kidney disease, stage 4
+N18.5 - Chronic kidney disease, stage 5
+N77.1 - Vaginitis, vulvitis and vulvovaginitis in infectious and parasitic diseases classified elsewhere
+N99.8 - Other postprocedural disorders of genito-urinary system
+Nasal polyps
+Nausea and vomiting
+Neoplasm of uncertain behavior
+Neoplasm of uncertain behavior of skin
+Neoplasm of unspecified nature of digestive system
+Nephritis and nephropathy with pathological lesion
+Nephrotic syndrome without mention of glomerulonephritis
+Nerve root and plexus disorders
+Neuralgia, neuritis, and radiculitis NOS
+Neurological disorders
+Neutropenia
+Nevus, non-neoplastic
+Nodular lymphoma
+Non-Hodgkins lymphoma
+Non-proliferative glomerulonephritis
+Noninfectious disorders of lymphatic channels
+Noninfectious gastroenteritis
+Noninflammatory disorders of cervix
+Noninflammatory disorders of ovary, fallopian tube, and broad ligament
+Noninflammatory disorders of vagina
+Noninflammatory disorders of vulva and perineum
+Noninflammatory female genital disorders
+Nonrheumatic aortic valve disorders
+Nonrheumatic mitral valve disorders
+Nonspecific abnormal findings in stool contents
+Nonspecific abnormal findings on radiological and other examination of biliary tract
+Nonspecific abnormal findings on radiological and other examination of other intrathoracic organs (echocardiogram, etc)
+Nonspecific chest pain
+Nonspecific findings on examination of blood
+Nontoxic multinodular goiter
+Nontoxic uninodular goiter
+Normal delivery
+Nystagmus and other irregular eye movements
+O75.7 - Vaginal delivery following previous Caesarean section
+Obesity
+Obsessive-compulsive disorders
+Obstetrical/birth trauma
+Obstruction of bile duct
+Obstructive chronic bronchitis
+Occlusion and stenosis of precerebral arteries
+Occlusion of cerebral arteries
+Open wound of ear
+Open wound of lip and mouth
+Open wound of nose and sinus
+Open wound or laceration of eye or eyelid
+Open wounds of extremities
+Open wounds of head; neck; and trunk
+Opiates and related narcotics causing adverse effects in therapeutic use
+Optic neuritis/neuropathy
+Organic or persistent insomnia
+Orthostatic hypotension
+Osteoarthritis; localized
+Osteoarthrosis NOS
+Osteoarthrosis, generalized
+Osteoarthrosis, localized, primary
+Osteoarthrosis, localized, secondary
+Osteochondropathies
+Osteopenia or other disorder of bone and cartilage
+Osteoporosis NOS
+Otalgia
+Other CNS infection and poliomyelitis
+Other abnormal blood chemistry
+Other abnormal glucose
+Other abnormality of urination
+Other acquired deformities of limbs
+Other acquired musculoskeletal deformity
+Other acute and subacute forms of ischemic heart disease
+Other alveolar and parietoalveolar pneumonopathy
+Other and unspecified coagulation defects
+Other and unspecified disc disorder
+Other and unspecified disorders of the nervous system
+Other anemias
+Other benign neoplasm of connective and other soft tissue
+Other benign neoplasm of uterus
+Other cerebral degenerations
+Other chronic ischemic heart disease, unspecified
+Other chronic nonalcoholic liver disease
+Other complications of pregnancy NEC
+Other complications of the puerperium NEC
+Other conditions of brain, NOS
+Other demyelinating diseases of central nervous system
+Other derangement of joint
+Other diseases of blood and blood-forming organs
+Other diseases of lung
+Other diseases of respiratory system, NEC
+Other diseases of the teeth and supporting structures
+Other disorders of arteries and arterioles
+Other disorders of biliary tract
+Other disorders of bladder
+Other disorders of bone and cartilage
+Other disorders of cervical region
+Other disorders of eye
+Other disorders of eyelids
+Other disorders of gallbladder
+Other disorders of intestine
+Other disorders of lipoid metabolism
+Other disorders of liver
+Other disorders of male genital organs
+Other disorders of metabolism
+Other disorders of peritoneum
+Other disorders of prostate
+Other disorders of soft tissues
+Other disorders of stomach and duodenum
+Other disorders of synovium, tendon, and bursa
+Other disorders of testis
+Other disorders of the kidney and ureters
+Other disorders of thyroid
+Other disorders of tympanic membrane
+Other disorders of urethra and urinary tract
+Other dyschromia
+Other dyspnea
+Other forms of chronic heart disease
+Other headache syndromes
+Other hemoglobinopathies
+Other hypertensive complications
+Other hypertrophic and atrophic conditions of skin
+Other hypertrophic cardiomyopathy
+Other ill-defined and unknown causes of morbidity and mortality
+Other immunological findings
+Other infectious and parasitic diseases
+Other inflammatory disorders of male genital organs
+Other inflammatory spondylopathies
+Other intestinal obstruction
+Other local infections of skin and subcutaneous tissue
+Other mental disorder
+Other non-epithelial cancer of skin
+Other nonspecific findings on examination of urine
+Other open wound of head and face
+Other paralytic syndromes
+Other perinatal conditions of fetus or newborn
+Other peripheral nerve disorders
+Other retinal disorders
+Other signs and symptoms in breast
+Other signs and symptoms involving emotional state
+Other specified benign mammary dysplasias
+Other specified cardiac dysrhythmias
+Other specified congenital anomalies of kidney
+Other specified disorders of breast
+Other specified gastritis
+Other symptoms
+Other symptoms involving abdomen and pelvis
+Other symptoms/disorders or the urinary system
+Other tests
+Other unspecified back disorders
+Other upper respiratory disease
+Other venous embolism and thrombosis
+Other vitamin B12 deficiency anemia
+Otitis externa
+Otitis media
+Otorrhea
+Otosclerosis
+Ovarian cyst
+Pain and other symptoms associated with female genital organs
+Pain in joint
+Pain in limb
+Pain, swelling or discharge of eye
+Painful respiration
+Pallor and flushing
+Palpitations
+Pancreatic cancer
+Paralysis/spasm of vocal cords or larynx
+Paralytic ileus
+Paralytic strabismus
+Paranoid disorders
+Paraproteinemia
+Parkinson's disease
+Paroxysmal supraventricular tachycardia
+Paroxysmal ventricular tachycardia
+Partial epilepsy
+Pelvic inflammatory disease, NOS
+Pelvic peritoneal adhesions, female (postoperative) (postinfection)
+Peptic ulcer, site unspecified
+Perforation of tympanic membrane
+Periapical abscess
+Pericarditis
+Peripheral angiopathy in diseases classified elsewhere
+Peripheral enthesopathies and allied syndromes
+Peripheral or central vertigo
+Peripheral retinal degenerations
+Peripheral vascular disease, unspecified
+Peritoneal adhesions (postoperative) (postinfection)
+Peritoneal or intestinal adhesions
+Peritonitis and retroperitoneal infections
+Pernicious anemia
+Personal history of diseases of blood and blood-forming organs
+Personal history of diseases of digestive system
+Personality disorders
+Phlebitis and thrombophlebitis
+Phlebitis and thrombophlebitis of lower extremities
+Phobia
+Pilonidal cyst
+Pituitary hypofunction
+Placenta previa and abruptio placenta
+Pleurisy; pleural effusion
+Pneumococcal pneumonia
+Pneumoconiosis
+Pneumonia
+Pneumonitis due to inhalation of food or vomitus
+Poisoning by agents primarily affecting the cardiovascular system
+Poisoning by analgesics, antipyretics, and antirheumatics
+Poisoning by antibiotics
+Poisoning by anticonvulsants and anti-Parkinsonism drugs
+Poisoning by drugs primarily affecting the autonomic nervous system
+Poisoning by other anti-infectives
+Poisoning by psychotropic agents
+Poisoning/allergy of sulfonamides
+Polycystic ovaries
+Polycythemia vera
+Polycythemia, secondary
+Polymyalgia Rheumatica
+Polyneuropathy in diabetes
+Polyp of corpus uteri
+Polyp of female genital organs
+Portal hypertension
+Postinflammatory pulmonary fibrosis
+Postmenopausal atrophic vaginitis
+Postmenopausal bleeding
+Postoperative infection
+Precordial pain
+Preeclampsia and eclampsia
+Premature beats
+Premenopausal menorrhagia
+Primary angle-closure glaucoma
+Primary biliary cirrhosis
+Primary open angle glaucoma
+Primary pulmonary hypertension
+Primary thrombocytopenia
+Primary/intrinsic cardiomyopathies
+Problems associated with amniotic cavity and membranes
+Progressive myopia
+Prolapse of vaginal vault after hysterectomy
+Prolapse of vaginal walls
+Prostatitis
+Proteinuria
+Prurigo and Lichen
+Pruritus and related conditions
+Psoriasis
+Psoriasis vulgaris
+Psoriatic arthropathy
+Psychogenic disorder
+Psychosis
+Ptosis of eyelid
+Pulmonary collapse; interstitial and compensatory emphysema
+Pulmonary congestion and hypostasis
+Pulmonary heart disease
+Pyelonephritis
+Pyogenic granuloma
+R00.8 - Other and unspecified abnormalities of heart beat
+R26.3 - Immobility
+R29.6 - Tendency to fall, not elsewhere classified
+R87.6 - Abnormal cytological findings
+Rash and other nonspecific skin eruption
+Raynaud's syndrome
+Redundant prepuce and phimosis/BXO
+Reflux esophagitis
+Regional enteritis
+Renal colic
+Renal dialysis
+Renal failure NOS
+Respiratory complications
+Respiratory failure
+Respiratory insufficiency
+Retention of urine
+Retinal detachment with retinal defect
+Retinal detachments and defects
+Retinal vascular changes and abnomalities
+Rhesus isoimmunization in pregnancy
+Rheumatic disease of the heart valves
+Rheumatism, unspecified and fibrositis
+Rheumatoid arthritis
+Rheumatoid arthritis and other inflammatory polyarthropathies
+Right bundle branch block
+Rosacea
+Rupture of synovium
+S02.10 - Fracture of base of skull (closed)
+S02.20 - Fracture of nasal bones (closed)
+S02.40 - Fracture of malar and maxillary bones (closed)
+S02.60 - Fracture of mandible (closed)
+S06.50 - Traumatic subdural haemorrhage (without open intracranial wound)
+S06.60 - Traumatic subarachnoid haemorrhage (without open intracranial wound)
+S22.00 - Fracture of thoracic vertebra (closed)
+S22.20 - Fracture of sternum (closed)
+S22.30 - Fracture of rib (closed)
+S22.40 - Multiple fractures of ribs (closed)
+S27.00 - Traumatic pneumothorax (without open wound into thoracic cavity)
+S32.00 - Fracture of lumbar vertebra (closed)
+S32.40 - Fracture of acetabulum (closed)
+S32.50 - Fracture of pubis (closed)
+S42.00 - Fracture of clavicle (closed)
+S42.10 - Fracture of scapula (closed)
+S42.20 - Fracture of upper end of humerus (closed)
+S42.30 - Fracture of shaft of humerus (closed)
+S42.40 - Fracture of lower end of humerus (closed)
+S52.00 - Fracture of upper end of ulna (closed)
+S52.10 - Fracture of upper end of radius (closed)
+S52.50 - Fracture of lower end of radius (closed)
+S52.60 - Fracture of lower end of both ulna and radius (closed)
+S62.30 - Fracture of other metacarpal bone (closed)
+S62.50 - Fracture of thumb (closed)
+S62.60 - Fracture of other finger (closed)
+S62.61 - Fracture of other finger (open)
+S72.00 - Fracture of neck of femur (closed)
+S72.10 - Pertrochanteric fracture (closed)
+S82.00 - Fracture of patella (closed)
+S82.10 - Fracture of upper end of tibia (closed)
+S82.20 - Fracture of shaft of tibia (closed)
+S82.30 - Fracture of lower end of tibia (closed)
+S82.40 - Fracture of fibula alone (closed)
+S82.50 - Fracture of medial malleolus (closed)
+S82.60 - Fracture of lateral malleolus (closed)
+S82.80 - Fractures of other parts of lower leg (closed)
+S92.00 - Fracture of calcaneus (closed)
+S92.30 - Fracture of metatarsal bone (closed)
+Salicylates causing adverse effects in therapeutic use
+Sarcoidosis
+Scar conditions and fibrosis of skin
+Schizophrenia
+Sciatica
+Sebaceous cyst
+Seborrheic keratosis
+Second degree AV block
+Secondary hypothyroidism
+Secondary malignancy of bone
+Secondary malignancy of brain/spine
+Secondary malignancy of lymph nodes
+Secondary malignancy of respiratory organs
+Secondary malignant neoplasm
+Secondary malignant neoplasm of digestive systems
+Secondary malignant neoplasm of liver
+Secondary malignant neoplasm of skin
+Senile cataract
+Sensorineural hearing loss
+Sepsis
+Septal Deviations/Turbinate Hypertrophy
+Septicemia
+Sexual and gender identity disorders
+Shortness of breath
+Sialoadenitis
+Sialolithiasis
+Sicca syndrome
+Sickle cell anemia
+Simple and unspecified goiter
+Sinoatrial node dysfunction (Bradycardia)
+Skull and face fracture and other intercranial injury
+Sleep apnea
+Sleep disorders
+Small kidney
+Spina bifida
+Spinal stenosis
+Splenomegaly
+Spondylosis and allied disorders
+Spondylosis without myelopathy
+Sprains and strains
+Staphylococcus infections
+Stomatitis and mucositis (ulcerative)
+Strabismus (not specified as paralytic)
+Streptococcus infection
+Stricture and stenosis of esophagus
+Stricture of artery
+Stricture/obstruction of ureter
+Subarachnoid hemorrhage
+Subdural hemorrhage
+Subjective visual disturbances
+Substance addiction and disorders
+Suicide or self-inflicted injury
+Superficial cellulitis and abscess
+Superficial injury without mention of infection
+Suppurative and unspecified otitis media
+Swelling of limb
+Swelling, mass, or lump in head and neck [Space-occupying lesion, intracranial NOS]
+Symptomatic menopause
+Symptoms affecting skin
+Symptoms and disorders of the joints
+Symptoms concerning nutrition, metabolism, and development
+Symptoms involving cardiovascular system
+Symptoms involving digestive system
+Symptoms involving head and neck
+Symptoms involving nervous and musculoskeletal systems
+Symptoms involving respiratory system and other chest symptoms
+Symptoms of the muscles
+Syncope and collapse
+Synoviopathy
+Synovitis and tenosynovitis
+Systemic lupus erythematosus
+Systemic sclerosis
+T85.8 - Other complications of internal prosthetic devices, implants and grafts, not elsewhere classified
+T92.1 - Sequelae of fracture of arm
+T93.2 - Sequelae of other fractures of lower limb
+Tachycardia NOS
+Temporomandibular joint disorder, unspecified
+Tension headache
+Testicular hypofunction
+Throat pain
+Thrombocytopenia
+Thyroid cancer
+Thyrotoxicosis with or without goiter
+Tinnitus
+Tobacco use disorder
+Torsion dystonia
+Toxic effect of (non-ethyl) alcohol and petroleum and other solvents
+Toxic gastroenteritis and colitis
+Transient cerebral ischemia
+Traumatic amputation
+Traumatic arthropathy
+Trigeminal nerve disorders [CN5]
+Tuberculosis
+Tympanosclerosis and middle ear disease related to otitis media
+Type 1 diabetes
+Type 1 diabetes with ketoacidosis
+Type 1 diabetes with neurological manifestations
+Type 1 diabetes with ophthalmic manifestations
+Type 2 diabetes
+Type 2 diabetes with neurological manifestations
+Type 2 diabetes with ophthalmic manifestations
+Type 2 diabetes with renal manifestations
+U80.1 - Methicillin resistant agent
+Ulcer of esophagus
+Ulceration of intestine
+Ulceration of the lower GI tract
+Ulcerative colitis
+Ulcerative colitis (chronic)
+Umbilical cord complications during labor and delivery
+Umbilical hernia
+Unspecified diffuse connective tissue disease
+Unspecified disorder of lipoid metabolism
+Unspecified erythematous condition
+Unspecified monoarthritis
+Unstable angina (intermediate coronary syndrome)
+Urethral stricture (not specified as infectious)
+Urinary calculus
+Urinary incontinence
+Urinary tract infection
+Urticaria
+Uterine leiomyoma
+Uterine/Uterovaginal prolapse
+Uveitis, noninfectious or NOS
+V03.1 - Traffic accident
+V13.4 - Driver injured in traffic accident
+V18.0 - Driver injured in nontraffic accident
+V18.4 - Driver injured in traffic accident
+V23.4 - Driver injured in traffic accident
+V28.4 - Driver injured in traffic accident
+V43.5 - Driver injured in traffic accident
+V80.0 - Rider or occupant injured by fall from or being thrown from animal or animal-drawn vehicle in noncollision accident
+Vaginal enterocele, congenital or acquired
+Vaginitis and vulvovaginitis
+Valvular heart disease/ heart chambers
+Varicose veins
+Varicose veins of lower extremity
+Varicose veins of lower extremity, symptomtic
+Vascular dementia
+Vascular insufficiency of intestine
+Venous/cerebrovascular complications embolism in pregnancy and the puerperium
+Ventral hernia
+Ventricular fibrillation and flutter
+Viral Enteritis
+Viral hepatitis
+Viral hepatitis B
+Viral hepatitis C
+Viral infection
+Viral warts & HPV
+Visual disturbances
+Visual field defects
+Vitamin B-complex deficiencies
+Vitamin D deficiency
+Voice disturbance
+W00.4 - Street and highway
+W00.9 - Unspecified place
+W01.0 - Home
+W01.2 - School, other institution and public administrative area
+W01.3 - Sports and athletics area
+W01.4 - Street and highway
+W01.5 - Trade and service area
+W01.8 - Other specified place
+W01.9 - Unspecified place
+W06.0 - Home
+W07.0 - Home
+W10.0 - Home
+W10.9 - Unspecified place
+W11.0 - Home
+W11.9 - Unspecified place
+W17.9 - Unspecified place
+W18.0 - Home
+W18.4 - Street and highway
+W18.9 - Unspecified place
+W19.0 - Home
+W19.2 - School, other institution and public administrative area
+W19.4 - Street and highway
+W19.8 - Other specified place
+W19.9 - Unspecified place
+W22.0 - Home
+W22.9 - Unspecified place
+W23.9 - Unspecified place
+W25.0 - Home
+W25.9 - Unspecified place
+W26.0 - Home
+W26.9 - Unspecified place
+W27.9 - Unspecified place
+W29.9 - Unspecified place
+W31.9 - Unspecified place
+W44.9 - Unspecified place
+W45.9 - Unspecified place
+W54.9 - Unspecified place
+W55.9 - Unspecified place
+W57.9 - Unspecified place
+Wegener's granulomatosis
+Wheezing
+X40.9 - Unspecified place
+X50.0 - Home
+X50.3 - Sports and athletics area
+X50.9 - Unspecified place
+X59.9 - Unspecified place
+X60.0 - Home
+X60.9 - Unspecified place
+X61.0 - Home
+X61.9 - Unspecified place
+X62.0 - Home
+X62.9 - Unspecified place
+X64.0 - Home
+X64.9 - Unspecified place
+X65.0 - Home
+X65.9 - Unspecified place
+Y04.9 - Unspecified place
+Y42.5 - Other oestrogens and progestogens
+Y43.3 - Other antineoplastic drugs
+Y45.0 - Opioids and related analgesics
+Y45.3 - Other nonsteroidal anti-inflammatory drugs [NSAID]
+Y51.7 - Beta-Adrenoreceptor antagonists, not elsewhere classified
+Y52.4 - Angiotensin-converting-enzyme inhibitors
+Y57.9 - Drug or medicament, unspecified
+Y60.0 - During surgical operation
+Y83.0 - Surgical operation with transplant of whole organ
+Y83.2 - Surgical operation with anastomosis, bypass or graft
+Y83.3 - Surgical operation with formation of external stoma
+Y83.4 - Other reconstructive surgery
+Y83.6 - Removal of other organ (partial) (total)
+Y83.8 - Other surgical procedures
+Y83.9 - Surgical procedure, unspecified
+Y84.0 - Cardiac catheterisation
+Y84.2 - Radiological procedure and radiotherapy
+Y84.6 - Urinary catheterisation
+Y84.8 - Other medical procedures
+Y85.0 - Sequelae of motor-vehicle accident
+Y86 - Sequelae of other accidents
+Y95 - Nosocomial condition
+Z00.0 - General medical examination
+Z01.4 - Gynaecological examination (general)(routine)
+Z01.6 - Radiological examination, not elsewhere classified
+Z01.8 - Other specified special examinations
+Z02.8 - Other examinations for administrative purposes
+Z03.3 - Observation for suspected nervous system disorder
+Z03.4 - Observation for suspected myocardial infarction
+Z03.5 - Observation for other suspected cardiovascular diseases
+Z03.8 - Observation for other suspected diseases and conditions
+Z03.9 - Observation for suspected disease or condition, unspecified
+Z04.3 - Examination and observation following other accident
+Z04.8 - Examination and observation for other specified reasons
+Z04.9 - Examination and observation for unspecified reason
+Z08.0 - Follow-up examination after surgery for malignant neoplasm
+Z08.2 - Follow-up examination after chemotherapy for malignant neoplasm
+Z08.7 - Follow-up examination after combined treatment for malignant neoplasm
+Z08.8 - Follow-up examination after other treatment for malignant neoplasm
+Z08.9 - Follow-up examination after unspecified treatment for malignant neoplasm
+Z09.0 - Follow-up examination after surgery for other conditions
+Z09.2 - Follow-up examination after chemotherapy for other conditions
+Z09.8 - Follow-up examination after other treatment for other conditions
+Z09.9 - Follow-up examination after unspecified treatment for other conditions
+Z11.0 - Special screening examination for intestinal infectious diseases
+Z11.2 - Special screening examination for other bacterial diseases
+Z11.5 - Special screening examination for other viral diseases
+Z12.1 - Special screening examination for neoplasm of intestinal tract
+Z13.0 - Special screening examination for diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism
+Z13.1 - Special screening examination for diabetes mellitus
+Z13.6 - Special screening examination for cardiovascular disorders
+Z13.8 - Special screening examination for other specified diseases and disorders
+Z13.9 - Special screening examination, unspecified
+Z22.3 - Carrier of other specified bacterial diseases
+Z29.0 - Isolation
+Z29.2 - Other prophylactic chemotherapy
+Z30.1 - Insertion of (intra-uterine) contraceptive device
+Z30.2 - Sterilisation
+Z30.5 - Surveillance of (intra-uterine) contraceptive device
+Z34.0 - Supervision of normal first pregnancy
+Z34.8 - Supervision of other normal pregnancy
+Z34.9 - Supervision of normal pregnancy, unspecified
+Z35.0 - Supervision of pregnancy with history of infertility
+Z35.1 - Supervision of pregnancy with history of abortive outcome
+Z35.2 - Supervision of pregnancy with other poor reproductive or obstetric history
+Z35.5 - Supervision of elderly primigravida
+Z36.0 - Antenatal screening for chromosomal anomalies
+Z36.3 - Antenatal screening for malformations using ultrasound and other physical methods
+Z36.8 - Other antenatal screening
+Z36.9 - Antenatal screening, unspecified
+Z37.0 - Single live birth
+Z39.0 - Care and examination immediately after delivery
+Z39.1 - Care and examination of lactating mother
+Z40.0 - Prophylactic surgery for risk-factors related to malignant neoplasms
+Z41.1 - Other plastic surgery for unacceptable cosmetic appearance
+Z42.0 - Follow-up care involving plastic surgery of head and neck
+Z42.1 - Follow-up care involving plastic surgery of breast
+Z43.1 - Attention to gastrostomy
+Z43.3 - Attention to colostomy
+Z45.0 - Adjustment and management of cardiac pacemaker
+Z45.2 - Adjustment and management of vascular access device
+Z45.8 - Adjustment and management of other implanted devices
+Z46.6 - Fitting and adjustment of urinary device
+Z47.0 - Follow-up care involving removal of fracture plate and other internal fixation device
+Z47.8 - Other specified orthopaedic follow-up care
+Z48.0 - Attention to surgical dressings and sutures
+Z48.8 - Other specified surgical follow-up care
+Z48.9 - Surgical follow-up care, unspecified
+Z49.0 - Preparatory care for dialysis
+Z50.0 - Cardiac rehabilitation
+Z50.1 - Other physical therapy
+Z50.2 - Alcohol rehabilitation
+Z50.5 - Speech therapy
+Z50.7 - Occupational therapy and vocational rehabilitation, not elsewhere classified
+Z50.8 - Care involving use of rehabilitation procedures
+Z50.9 - Care involving use of rehabilitation procedure, unspecified
+Z51.0 - Radiotherapy session
+Z51.3 - Blood transfusion without reported diagnosis
+Z51.4 - Preparatory care for treatment, not elsewhere classified
+Z51.5 - Palliative care
+Z51.8 - Other specified medical care
+Z52.4 - Kidney donor
+Z53.0 - Procedure not carried out because of contraindication
+Z53.2 - Procedure not carried out because of patient's decision for other and unspecified reasons
+Z53.8 - Procedure not carried out for other reasons
+Z53.9 - Procedure not carried out, unspecified reason
+Z57.2 - Occupational exposure to dust
+Z60.2 - Living alone
+Z63.4 - Disappearance and death of family member
+Z71.1 - Person with feared complaint in whom no diagnosis is made
+Z71.3 - Dietary counselling and surveillance
+Z71.8 - Other specified counselling
+Z71.9 - Counselling, unspecified
+Z73.3 - Stress, not elsewhere classified
+Z73.9 - Problem related to life-management difficulty, unspecified
+Z74.0 - Reduced mobility
+Z75.1 - Person awaiting admission to adequate facility elsewhere
+Z80.0 - Family history of malignant neoplasm of digestive organs
+Z80.1 - Family history of malignant neoplasm of trachea, bronchus and lung
+Z80.3 - Family history of malignant neoplasm of breast
+Z80.4 - Family history of malignant neoplasm of genital organs
+Z80.5 - Family history of malignant neoplasm of urinary tract
+Z80.8 - Family history of malignant neoplasm of other organs or systems
+Z80.9 - Family history of malignant neoplasm, unspecified
+Z82.3 - Family history of stroke
+Z82.4 - Family history of ischaemic heart disease and other diseases of the circulatory system
+Z86.1 - Personal history of infectious and parasitic diseases
+Z86.3 - Personal history of endocrine, nutritional and metabolic diseases
+Z86.6 - Personal history of diseases of the nervous system and sense organs
+Z87.3 - Personal history of diseases of the musculoskeletal system and connective tissue
+Z87.4 - Personal history of diseases of the genito-urinary system
+Z87.5 - Personal history of complications of pregnancy, childbirth and the puerperium
+Z87.7 - Personal history of congenital malformations, deformations and chromosomal abnormalities
+Z87.8 - Personal history of other specified conditions
+Z88.8 - Personal history of allergy to other drugs, medicaments and biological substances
+Z88.9 - Personal history of allergy to unspecified drugs, medicaments and biological substances
+Z89.4 - Acquired absence of foot and ankle
+Z90.0 - Acquired absence of part of head and neck
+Z90.2 - Acquired absence of lung [part of]
+Z90.3 - Acquired absence of part of stomach
+Z90.4 - Acquired absence of other parts of digestive tract
+Z90.5 - Acquired absence of kidney
+Z90.6 - Acquired absence of other parts of urinary tract
+Z90.7 - Acquired absence of genital organ(s)
+Z90.8 - Acquired absence of other organs
+Z91.0 - Personal history of allergy, other than to drugs and biological substances
+Z91.1 - Personal history of noncompliance with medical treatment and regimen
+Z91.6 - Personal history of other physical trauma
+Z92.0 - Personal history of contraception
+Z92.1 - Personal history of long-term (current) use of anticoagulants
+Z92.2 - Personal history of long-term (current) use of other medicaments
+Z92.4 - Personal history of major surgery, not elsewhere classified
+Z92.6 - Personal history of chemotherapy for neoplastic disease
+Z93.0 - Tracheostomy status
+Z93.1 - Gastrostomy status
+Z93.3 - Colostomy status
+Z94.8 - Other transplanted organ and tissue status
+Z95.8 - Presence of other cardiac and vascular implants and grafts
+Z96.6 - Presence of orthopaedic joint implants
+Z96.7 - Presence of other bone and tendon implants
+Z96.8 - Presence of other specified functional implants
+Z97.5 - Presence of (intra-uterine) contraceptive device
+Z97.8 - Presence of other specified devices
+Z98.0 - Intestinal bypass and anastomosis status
+Z98.1 - Arthrodesis status
+Z98.2 - Presence of cerebrospinal fluid drainage device
+Z98.8 - Other specified postsurgical states
+Z99.3 - Dependence on wheelchair
+Z99.8 - Dependence on other enabling machines and devices
+stress incontinence, female
+Apolipoprotein A Blood biochemistry
+Apolipoprotein B Blood biochemistry
+Cholesterol Blood biochemistry
+HDL cholesterol Blood biochemistry
+LDL direct Blood biochemistry
+Lipoprotein A Blood biochemistry
+Triglycerides Blood biochemistry
+Medication for cholesterol, blood pressure or diabetes Medication
+Average Diameter for HDL Particles
+Average Diameter for LDL Particles
+Average Diameter for VLDL Particles
+Cholesterol in Chylomicrons and Extremely Large VLDL
+Cholesterol in IDL
+Cholesterol in Large HDL
+Cholesterol in Large LDL
+Cholesterol in Large VLDL
+Cholesterol in Medium HDL
+Cholesterol in Medium LDL
+Cholesterol in Medium VLDL
+Cholesterol in Small HDL
+Cholesterol in Small LDL
+Cholesterol in Small VLDL
+Cholesterol in Very Large HDL
+Cholesterol in Very Large VLDL
+Cholesterol in Very Small VLDL
+Concentration of Chylomicrons and Extremely Large VLDL Particles
+Concentration of HDL Particles
+Concentration of IDL Particles
+Concentration of LDL Particles
+Concentration of Large HDL Particles
+Concentration of Large LDL Particles
+Concentration of Large VLDL Particles
+Concentration of Medium HDL Particles
+Concentration of Medium LDL Particles
+Concentration of Medium VLDL Particles
+Concentration of Small HDL Particles
+Concentration of Small LDL Particles
+Concentration of Small VLDL Particles
+Concentration of VLDL Particles
+Concentration of Very Large HDL Particles
+Concentration of Very Large VLDL Particles
+Concentration of Very Small VLDL Particles
+(AAM) age at menopause genetic risk
+(AMD) age-related macular degeneration genetic risk
+(AD) alzheimer's disease genetic risk
+(AST) asthma genetic risk
+(AF) atrial fibrillation genetic risk
+(BD) bipolar disorder genetic risk
+(BMI) body mass index genetic risk
+(CRC) bowel cancer genetic risk
+(BC) breast cancer genetic risk
+(CVD) cardiovascular disease genetic risk
+(CED) coeliac disease genetic risk
+(CAD) coronary artery disease genetic risk
+(CD) crohn's disease genetic risk
+(EOC) epithelial ovarian cancer genetic risk
+(EBMDT) estimated bone mineral density t-score genetic risk
+(HBA1C_DF) glycated haemoglobin genetic risk
+(HEIGHT) height genetic risk
+(HDL) high density lipoprotein cholesterol genetic risk
+(HT) hypertension genetic risk
+(IOP) intraocular pressure genetic risk
+(ISS) ischaemic stroke genetic risk
+(LDL_SF) low density lipoprotein cholesterol genetic risk
+(MEL) melanoma genetic risk
+(MS) multiple sclerosis genetic risk
+(OP) osteoporosis genetic risk
+(PD) parkinson's disease genetic risk
+(POAG) primary open angle glaucoma genetic risk
+(PC) prostate cancer genetic risk
+(PSO) psoriasis genetic risk
+(RA) rheumatoid arthritis genetic risk
+(SCZ) schizophrenia genetic risk
+(SLE) systemic lupus erythematosus genetic risk
+(T1D) type 1 diabetes genetic risk
+(T2D) type 2 diabetes genetic risk
+(UC) ulcerative colitis genetic risk
+(VTE) venous thromboembolic disease genetic risk
+PRS genetic principal components | Array 0
+Townsend deprivation index at recruitment
+Birth weight
+Cascot confidence score
+Overall health rating
+Long-standing illness, disability or infirmity
+Falls in the last year
+Weight change compared with 1 year ago
+General pain for 3+ months
+Fluid intelligence score
+Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones
+Eye problems/disorders
+Non-accidental death in close genetic family
+Medication for cholesterol, blood pressure or diabetes
+Basophill count
+Basophill percentage
+Eosinophill percentage
+Haematocrit percentage
+Haemoglobin concentration
+Mean platelet (thrombocyte) volume
+Coffee intake
+Tea intake
+(non-UK origin) Country of Birth
+Ethnic background
+Genetic ethnic grouping
+Total protein
+Triglycerides
+SHBG
+Direct bilirubin
+Total bilirubin
+Alanine aminotransferase
+Testosterone
+Urate
+Urea
+Vitamin D
+Never eat eggs, dairy, wheat, sugar
+Salt added to food
+Water intake
+Major dietary changes in the last 5 years
+Variation in diet
+Mineral and other dietary supplements
+Low Protein
+Sleep - Overall average
+Birth weight known
+Job code at visit
+Number of treatments/medications taken
+Long-term/recurrent antibiotics as child or teenager
+Oily fish intake
+Weight (p21002)
+Weight (p23098)
+Weight change during worst episode of depression
+Age when diabetes-related eye disease diagnosed
+Diabetes diagnosed by doctor
+Gestational diabetes only
+Age diabetes diagnosed
+Started insulin within one year diagnosis of diabetes
+Illnesses of mother
+Illnesses of siblings
+Illnesses of adopted father
+Alcohol drinker status
+Alcohol intake frequency.
+Frequency of friend/family visits
+Bipolar and major depression status
+Mood swings
+Miserableness
+Probable recurrent major depression (moderate)
+Neuroticism score
+Bipolar disorder status
+Single episode of probable major depression
+Fed-up feelings
+Nervous feelings
+Suffer from 'nerves'
+Wheeze or whistling in the chest in last year
+Cancer diagnosed by doctor
+Hearing difficulty/problems
+Tinnitus severity/nuisance
+HSV-1 seropositivity for Herpes Simplex virus-1
+HSV-2 seropositivity for Herpes Simplex virus-2
+Acetate
+3-Hydroxybutyrate
+Acetoacetate
+Acetone
+Alanine
+Albumin
+Apolipoprotein A1
+Apolipoprotein B
+Apolipoprotein B to Apolipoprotein A1 ratio
+Date of attending assessment centre
+Home area population density - urban or rural
+Qualifications
+(United Kingdom) Year immigrated to UK
+Hot drink temperature
+Skin colour
+Time spend outdoors in summer
+Time spent outdoors in winter
+Probable recurrent major depression (severe)
+Irritability
+Health satisfaction
+Frequency of depressed mood in last 2 weeks
+Frequency of tiredness / lethargy in last 2 weeks
+Mouth/teeth dental problems
+Leg pain on walking
+Leg pain when standing still or sitting
+Surgery on leg arteries (other than for varicose veins)
+Surgery/amputation of toe or leg
+Chest pain or discomfort
+Chest pain due to walking ceases when standing still
+Ever had bowel cancer screening
+Most recent bowel cancer screening
+Had major operations
+Had other major operations
+Age heart attack diagnosed
+Fractured/broken bones in last 5 years
+Fracture resulting from simple fall
+Cochlear implant
+Number of self-reported non-cancer illnesses
+Treatment/medication code | Array 0
+Pulse wave reflection index
+Stiffness method
+(BMI) Body mass index (p21001)
+Hip circumference
+Standing height
+(BMI) Body mass index (p23104)
+Leg fat-free mass (right)
+Arm fat percentage (left)
+Acceptability of each blow result (text) | Array 0
+Contra-indications for spirometry
+Caffeine drink within last hour
+Fitness test results, including ECG data
+Ever had refractive laser eye surgery
+Ever had surgery for glaucoma or high eye pressure
+Myopia diagnosis
+avMSE
+Microalbumin in urine
+Sodium in urine
+Sodium in urine result flag
+Potassium in urine result flag
+Potassium in urine
+Age cataract diagnosed
+Age macular degeneration diagnosed
+Age other serious eye condition diagnosed
+Vascular/heart problems diagnosed by doctor
+Age angina diagnosed
+Age high blood pressure diagnosed
+Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor
+(DVT, blood clot in leg) Age deep-vein thrombosis diagnosed
+Age emphysema/chronic bronchitis diagnosed
+Age asthma diagnosed
+Other serious medical condition/disability diagnosed by doctor
+Mental health conditions ever diagnosed by a professional
+Method of diagnosis when first had COVID-19
+(PSA) Time since last prostate specific antigen test
+Age hay fever, rhinitis or eczema diagnosed
+Number of self-reported cancers
+Panic attack caused by medical condition, medication, drugs or alcohol
+Amount of tobacco currently smoked
+Doctor diagnosed alpha-1 antitrypsin deficiency
+Doctor diagnosed asbestosis
+Doctor diagnosed asthma
+Doctor diagnosed bronchiectasis
+Doctor diagnosed COPD (chronic obstructive pulmonary disease)
+Doctor diagnosed cystic fibrosis
+Doctor diagnosed lung cancer (not mesothelioma)
+Doctor diagnosed emphysema
+Average total household income before tax
+Total bilirubin aliquot
+Total protein aliquot
+Cholesterol to Total Lipids in Chylomicrons and Extremely Large VLDL percentage, QC Flag
+Meat substitutes - vegetarian
+Meat substitutes - soy
+Medium and low fat cheese
+Non-cancer illness code, self-reported | Array 0
+Non-cancer illness code, self-reported | Array 1
+Non-cancer illness code, self-reported | Array 2
+Non-cancer illness code, self-reported | Array 3
+Non-cancer illness code, self-reported | Array 4
+Non-cancer illness code, self-reported | Array 5
+Non-cancer illness code, self-reported | Array 6
+Date of all cause dementia report
+Date of alzheimer's disease report
+Date of vascular dementia report
+Behavioural and miscellaneous addictions
+Ever addicted to any substance or behaviour
+Ongoing addiction or dependence on illicit or recreational drugs
+Ever addicted to a behaviour or miscellanous
+Ever addicted to illicit or recreational drugs
+Date elapsed of all cause dementia report
+Date elapsed of alzheimer's disease report
+Date elapsed of vascular dementia report
+age_X_sex

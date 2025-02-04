@@ -1,0 +1,376 @@
+feature,Counts
+(AAM) age at menopause genetic risk,7
+(AD) alzheimer's disease genetic risk,1
+(AF) atrial fibrillation genetic risk,3
+(AMD) age-related macular degeneration genetic risk,3
+(AST) asthma genetic risk,5
+(BMI) body mass index genetic risk,1
+(CD) crohn's disease genetic risk,1
+(CED) coeliac disease genetic risk,1
+(CRC) bowel cancer genetic risk,2
+(HDL) high density lipoprotein cholesterol genetic risk,4
+(HT) hypertension genetic risk,2
+(ISS) ischaemic stroke genetic risk,5
+(LDL SF) low density lipoprotein cholesterol genetic risk,6
+(MEL) melanoma genetic risk,8
+(MS) multiple sclerosis genetic risk,1
+(PC) prostate cancer genetic risk,4
+(RA) rheumatoid arthritis genetic risk,1
+(SLE) systemic lupus erythematosus genetic risk,1
+(T2D) type 2 diabetes genetic risk,1
+(UC) ulcerative colitis genetic risk,1
+(United Kingdom) Year immigrated to UK,2
+3-Hydroxybutyrate,5
+A09.9 - Gastroenteritis and colitis of unspecified origin,1
+AD alzheimer s disease genetic risk,3
+AMD age related macular degeneration genetic risk,2
+Acceptability of each blow result (text) | False,1
+Acceptability of each blow result (text) | True,1
+Acetate,1
+Acetoacetate,5
+Acetone,4
+Acute renal failure,1
+"Age hay fever, rhinitis or eczema diagnosed",1
+"Age hay fever, rhinitis or eczema diagnosed not",1
+Age heart attack diagnosed,1
+Age high blood pressure diagnosed,1
+Alanine,3
+Alanine aminotransferase,3
+Alcohol drinker status Never,1
+Alcohol intake frequency Once or twice a week,1
+Alcohol intake frequency One to three times a month,1
+Alcohol intake frequency Three or four times a week,1
+Allergy adverse effect of penicillin,2
+Anal and rectal conditions,1
+Angina pectoris,1
+Anxiety disorder,1
+Apolipoprotein A Blood biochemistry,2
+Apolipoprotein A1,3
+Apolipoprotein B,2
+Apolipoprotein B Blood biochemistry,2
+Apolipoprotein B to Apolipoprotein A1 ratio,4
+Arm fat percentage,7
+Arthropathy NOS,3
+Ascites non malignant,1
+Atrial fibrillation and flutter,2
+Average Diameter for HDL Particles,1
+Average Diameter for LDL Particles,6
+Average Diameter for VLDL Particles,2
+Average total household income before tax,1
+BC breast cancer genetic risk,5
+BD bipolar disorder genetic risk,4
+Basophill count,3
+Basophill percentage,2
+Behavioural and miscellaneous addictions,1
+Benign neoplasm of colon,1
+Benign neoplasm of other parts of digestive system,1
+Bipolar and major depression status,1
+Bipolar and major depression status No Bipolar or Depression,2
+Birth weight,3
+Birth weight known,2
+Birth weight known Yes - pounds and ounces,1
+"Blood clot, DVT, bronchitis, emphysema, asthma, rhinitis, eczema, allergy diagnosed by doctor None of the above",2
+CAD coronary artery disease genetic risk,3
+CD crohn s disease genetic risk,4
+CED coeliac disease genetic risk,3
+CRC bowel cancer genetic risk,1
+CVD cardiovascular disease genetic risk,3
+Cancer of bronchus; lung,2
+Cancer of prostate,1
+Cataract,1
+Chest pain due to walking ceases when standing still,1
+Cholelithiasis with other cholecystitis,1
+Cholesterol Blood biochemistry,4
+Cholesterol in Chylomicrons and Extremely Large VLDL,1
+Cholesterol in IDL,3
+Cholesterol in Large LDL,1
+Cholesterol in Medium HDL,3
+Cholesterol in Medium LDL,1
+Cholesterol in Medium VLDL,1
+Cholesterol in Small HDL,2
+Cholesterol in Small LDL,2
+Cholesterol in Small VLDL,1
+Cholesterol in Very Large HDL,1
+Cholesterol in Very Large VLDL,2
+Cholesterol in Very Small VLDL,1
+Circulatory disease NEC,2
+Cochlear implant,2
+Coffee intake,1
+Complications of cardiac vascular device implant and graft,1
+Complications of transplants and reattached limbs,3
+Concentration of Chylomicrons and Extremely Large VLDL Particles,1
+Concentration of HDL Particles,2
+Concentration of IDL Particles,3
+Concentration of Large HDL Particles,2
+Concentration of Large VLDL Particles,2
+Concentration of Medium HDL Particles,2
+Concentration of Medium LDL Particles,3
+Concentration of Medium VLDL Particles,1
+Concentration of Small HDL Particles,2
+Concentration of Small LDL Particles,2
+Concentration of Small VLDL Particles,1
+Concentration of VLDL Particles,2
+Concentration of Very Large HDL Particles,3
+Concentration of Very Large VLDL Particles,2
+Concentration of Very Small VLDL Particles,3
+Contra-indications for spirometry,2
+Coronary atherosclerosis,1
+DVT blood clot in leg Age deep vein thrombosis diagnosed,1
+Date of all cause dementia report,2
+Diaphragmatic hernia,2
+Direct bilirubin,5
+Diverticulosis,4
+Doctor diagnosed COPD chronic obstructive pulmonary disease,1
+Doctor diagnosed asbestosis,1
+Doctor diagnosed asthma,1
+Doctor diagnosed bronchiectasis,1
+Doctor diagnosed cystic fibrosis,2
+Doctor diagnosed lung cancer not mesothelioma,1
+Duodenitis,1
+EBMDT estimated bone mineral density t score genetic risk,6
+EOC epithelial ovarian cancer genetic risk,7
+Essential hypertension,2
+Ethnic background Any other mixed background,1
+Ever addicted to any substance or behaviour,1
+Ever had bowel cancer screening,2
+Eye problems disorders Cataract,1
+"F32.9 - Depressive episode, unspecified",1
+Falls in the last year More than one fall,1
+Falls in the last year No falls,2
+Falls in the last year Only one fall,1
+Fed up feelings,6
+Fluid intelligence score,4
+Fracture resulting from simple fall,1
+Fractured/broken bones in last 5 years,1
+Frequency of depressed mood in last 2 weeks Not at all,4
+Frequency of friend family visits Almost daily,2
+Frequency of tiredness / lethargy in last 2 weeks Nearly every day,1
+Frequency of tiredness / lethargy in last 2 weeks Not at all,1
+GERD,1
+Gastritis and duodenitis,3
+Genetic ethnic grouping,1
+Gestational diabetes only,2
+HBA1C DF glycated haemoglobin genetic risk,5
+HDL cholesterol Blood biochemistry,3
+HEIGHT height genetic risk,3
+HSV 1 seropositivity for Herpes Simplex virus 1,1
+HSV 2 seropositivity for Herpes Simplex virus 2,1
+Had major operations,1
+Had other major operations Yes - you will be asked about this later by an interviewer,2
+Haemoglobin concentration,4
+Hallux valgus (Bunion),2
+Health satisfaction,2
+Health satisfaction Moderately unhappy,1
+Health satisfaction Very happy,1
+Health satisfaction Very unhappy,1
+Hearing difficulty problems,5
+Hemorrhage of rectum and anus,1
+Hemorrhoids,2
+Hip circumference,5
+Home area population density  urban or rural England Wales  Town and Fringe  less sparse,4
+Home area population density  urban or rural England Wales  Urban  less sparse,5
+Home area population density  urban or rural England Wales  Village  less sparse,1
+Home area population density  urban or rural Scotland  Accessible Rural,2
+Home area population density  urban or rural Scotland  Accessible Small Town,2
+Home area population density  urban or rural Scotland  Large Urban Area,1
+Home area population density  urban or rural Scotland  Other Urban Area,4
+Home area population density - urban or rural Scotland - Large Urban Area,5
+Hot drink temperature Hot,3
+Hot drink temperature Very hot,2
+Hot drink temperature Warm,1
+Hypercholesterolemia,2
+Hypotension NOS,1
+IOP intraocular pressure genetic risk,7
+Illnesses of adopted father,2
+Illnesses of mother 0 Severe depression,1
+Illnesses of mother 1 None group 1,1
+Illnesses of mother 1 None group 2,1
+Illnesses of mother 3 None group 2,1
+Illnesses of siblings,3
+Illnesses of siblings 0 None (group 1),2
+Illnesses of siblings 0 Stroke,1
+Illnesses of siblings 1 None (group 2),1
+Inguinal hernia,1
+"Iron deficiency anemias, unspecified or not due to blood loss",1
+Irritability,2
+K22.7 - Barrett's oesophagus,1
+LDL direct Blood biochemistry,4
+Leg fat free mass,5
+Leg pain on walking,1
+Leg pain when standing still or sitting,1
+Lipoprotein A Blood biochemistry,5
+Long standing illness disability or infirmity,3
+Long term recurrent antibiotics as child or teenager,1
+Long-term/recurrent antibiotics as child or teenager,1
+"M13.99 - Arthritis, unspecified (Site unspecified)",1
+"M15.9 - Polyarthrosis, unspecified",1
+"M19.99 - Arthrosis, unspecified (Site unspecified)",1
+M25.55 - Pain in joint (Pelvic region and thigh),1
+MS multiple sclerosis genetic risk,2
+Mean platelet thrombocyte volume,3
+Meat substitutes  vegetarian,1
+Medication for cholesterol blood pressure diabetes or take exogenous hormones Blood pressure medication,1
+Medication for cholesterol blood pressure diabetes or take exogenous hormones Cholesterol lowering medication Blood pressure medication,1
+Medication for cholesterol blood pressure diabetes or take exogenous hormones Hormone replacement therapy,1
+Medication for cholesterol blood pressure or diabetes Medication Cholesterol lowering medication Blood pressure medication,1
+"Medication for cholesterol, blood pressure or diabetes Cholesterol lowering medication|Blood pressure medication",1
+"Medication for cholesterol, blood pressure or diabetes Medication Cholesterol lowering medication|Blood pressure medication",1
+"Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones None of the above",1
+Medium and low fat cheese,1
+Mental health conditions ever diagnosed by a professional group,1
+Mental health conditions ever diagnosed by a professional group depression,2
+Mental health conditions ever diagnosed by a professional none of,1
+Mental health conditions ever diagnosed by a professional of,6
+Mental health conditions ever diagnosed by a professional of group,4
+Mental health conditions ever diagnosed by a professional or,1
+Mental health conditions ever diagnosed by a professional or nerves,1
+Method of diagnosis when first had COVID 19 Confirmed by a positive PCR test,1
+Method of diagnosis when first had COVID-19 Confirmed by a positive rapid lateral flow test,1
+Microalbumin in urine,7
+Mineral and other dietary supplements Glucosamine,2
+Mineral and other dietary supplements None of the above,2
+Mood swings,3
+Most recent bowel cancer screening,4
+Most recent bowel cancer screening Less than 1 year ago,1
+Mouth teeth dental problems Bleeding gums,1
+Mouth teeth dental problems Dentures,4
+Mouth teeth dental problems Mouth ulcers,1
+Mouth/teeth dental problems Bleeding gums,2
+Myopia diagnosis moderate low myopia,1
+Myopia diagnosis non myopic,2
+Nervous feelings,1
+Neuroticism score,6
+Never eat eggs dairy wheat sugar Sugar or foods drinks containing sugar,1
+"Never eat eggs, dairy, wheat, sugar I eat all of the above",3
+"Never eat eggs, dairy, wheat, sugar Sugar or foods/drinks containing sugar",2
+"Non-cancer illness code, self-reported |",5
+Number of self reported cancers,2
+Number of self reported non cancer illnesses,3
+Number of treatments medications taken,1
+OP osteoporosis genetic risk,3
+Occlusion of cerebral arteries,1
+Oily fish intake 2-4 times a week,2
+Oily fish intake 5-6 times a week,1
+Oily fish intake Never,2
+Oily fish intake Once a week,2
+Ongoing addiction or dependence on illicit or recreational drugs,1
+"Osteoarthrosis, localized, primary",1
+"Other chronic ischemic heart disease, unspecified",1
+Other diseases of respiratory system NEC,3
+Other mental disorder,1
+Other non epithelial cancer of skin,2
+Other non-epithelial cancer of skin,1
+Other open wound of head and face,1
+Other serious medical condition/disability diagnosed by doctor,2
+Other specified gastritis,2
+PC prostate cancer genetic risk,1
+PD parkinson s disease genetic risk,5
+POAG primary open angle glaucoma genetic risk,6
+PSA Time since last prostate specific antigen test,1
+PSO psoriasis genetic risk,4
+"Panic attack caused by medical condition, medication, drugs or alcohol No, never",1
+Peripheral enthesopathies and allied syndromes,3
+Pleurisy pleural effusion,2
+Polyp of corpus uteri,1
+Potassium in urine,5
+Precordial pain,1
+Prolapse of vaginal walls,1
+Pulse wave reflection index,5
+RA rheumatoid arthritis genetic risk,1
+Retention of urine,1
+SCZ schizophrenia genetic risk,4
+SHBG,5
+SLE systemic lupus erythematosus genetic risk,1
+Salt added to food Always,2
+Salt added to food Never/rarely,3
+Salt added to food Sometimes,3
+Salt added to food Usually,1
+Secondary malignancy of lymph nodes,1
+Septal Deviations Turbinate Hypertrophy,2
+Skin colour Black,2
+Skin colour Brown,2
+Skin colour Dark olive,1
+Skin colour Fair,5
+Skin colour Light olive,2
+Skin colour Prefer not to answer,1
+Skin colour Very fair,1
+Sleep - Overall average,3
+Sodium in urine,3
+Standing height,4
+Started insulin within one year diagnosis of diabetes,6
+Stiffness method Direct entry,1
+Surgery on leg arteries other than for varicose veins,2
+Surgery/amputation of toe or leg,1
+Symptoms concerning nutrition metabolism and development,1
+Symptoms involving digestive system,1
+Syncope and collapse,1
+T1D type 1 diabetes genetic risk,2
+Tachycardia NOS,1
+Tea intake,1
+Testosterone,3
+Time spend outdoors in summer,6
+Time spent outdoors in winter,6
+Time spent outdoors in winter Less than an hour a day,2
+Tobacco use disorder,2
+Total protein,2
+Total protein aliquot,2
+Townsend deprivation index at recruitment,5
+Triglycerides,2
+Triglycerides Blood biochemistry,3
+UC ulcerative colitis genetic risk,3
+Urate,5
+Urea,4
+Urinary incontinence,1
+Urinary tract infection,3
+VTE venous thromboembolic disease genetic risk,5
+Variation in diet Never/rarely,1
+Variation in diet Sometimes,2
+Varicose veins of lower extremity,1
+Vascular heart problems diagnosed by doctor High blood pressure,2
+Vascular/heart problems diagnosed by doctor None of the above,1
+Vitamin D,4
+Water intake,3
+Weight (p21002),2
+Weight change during worst episode of depression,1
+Weight change during worst episode of depression Gained weight,1
+Weight p21002,1
+Wheeze or whistling in the chest in last year,5
+Y95 - Nosocomial condition,1
+Z51.5 - Palliative care,1
+Z82 4  Family history of ischaemic heart disease and other diseases of the circulatory system,1
+Z90.4 - Acquired absence of other parts of digestive tract,1
+Z92.1 - Personal history of long-term (current) use of anticoagulants,2
+appendicitis,1
+back problem,1
+chronic bronchitis,1
+depression,1
+dietary changes in the last 5 years,2
+"dietary changes in the last 5 years Yes, because of other reasons",1
+disc slipped,1
+emphysema chronic,1
+eye,1
+high cholesterol,1
+hypertension,1
+hypothyroidism,1
+medication amlodipine,1
+medication atenolol,1
+medication bendroflumethiazide,1
+medication capsule,1
+medication cream,1
+medication diclofenac,1
+medication entry unable,1
+medication evening,1
+medication evening primrose,1
+medication ibuprofen,1
+medication oil,1
+medication omeprazole,1
+medication primrose oil,1
+medication simvastatin,1
+medication tamsulosin,1
+myxoedema,1
+osteoarthritis,2
+problem,1
+slipped disc,1
+soft tissue,1
+stones,1
+uterine,1

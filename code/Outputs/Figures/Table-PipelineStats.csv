@@ -1,0 +1,9 @@
+Target Disease,Disease Counts,Disease Prevalence (%),# Features After Utility Filtering,# Features After Knowledge Graph,# Features After Literature Search,# Features selected by LLM
+"GALLSTONES, Cholelithiasis",19658,5.07,1447,697,157,49
+Gout,9159,2.36,1707,812,148,62
+Coeliac disease,2653,0.68,953,487,134,61
+Spine degeneration,24867,6.42,2430,1187,136,72
+Esophageal cancer,1518,0.39,611,408,152,59
+Heart attack,3638,0.94,1008,520,102,43
+Retinal Vein Occlusion,1246,0.32,558,402,163,59
+Depression,25880,6.68,2537,1036,77,25
