@@ -1,0 +1,53 @@
+Feature_Name,Util_Explanation,Utility,Utility_Score
+(MEL) melanoma genetic risk,No established mechanism or strong correlation with esophageal cancer; minimal clinical relevance.,FALSE,2
+Apolipoprotein A1,No clear link or mechanism for esophageal cancer; weak correlation limits practical use.,FALSE,2
+Age asthma diagnosed_10,Possible inflammatory link from childhood asthma; could modestly inform risk stratification.,TRUE,3
+Weight (p21002),Well-recognized risk factor (obesity) for esophageal cancer; strong clinical relevance.,TRUE,4
+Treatment/medication code | Array 0__atenolol,"Weak correlation, unclear biologic pathway; not practically useful at present.",FALSE,2
+(ISS) ischaemic stroke genetic risk,Distinct pathophysiology; no strong link to esophageal cancer or evident utility.,FALSE,2
+Ever addicted to illicit or recreational drugs_infrequent_,"Unexpected negative correlation, no plausible rationale; limited clinical use.",FALSE,2
+Abnormal results of function study of liver,Suggestive negative correlation but lacks a biologic mechanism; minimal utility.,FALSE,2
+(RA) rheumatoid arthritis genetic risk,Weak correlation and no direct link; not particularly useful for esophageal cancer.,FALSE,2
+Birth weight known_No,Novel but no clear causal or mechanistic explanation for esophageal cancer risk.,FALSE,2
+Townsend deprivation index at recruitment,"Socioeconomic status tied to known risk factors (smoking, alcohol); moderately useful.",TRUE,3
+(CAD) coronary artery disease genetic risk,Negative correlation lacks plausible explanation; not useful for esophageal cancer.,FALSE,2
+Apolipoprotein B,No established pathway to esophageal cancer; negative correlation with unclear relevance.,FALSE,2
+Average Diameter for VLDL Particles,Novel lipid-related observation but no clear mechanism; limited practical utility.,FALSE,2
+(AST) asthma genetic risk,Very weak evidence and no strong mechanistic link; not clinically impactful.,FALSE,2
+Alanine,Negative correlation without solid biologic basis; minimal predictive value.,FALSE,2
+Mouth/teeth dental problems_Bleeding gums,Contradicts usual oral-health risk patterns; lacks plausible explanation.,FALSE,2
+Age other serious eye condition diagnosed_None,Purported protective effect is speculative; not a known risk indicator.,FALSE,2
+Z90.7 - Acquired absence of genital organ(s),Negative correlation is novel but lacks justification for esophageal cancer relevance.,FALSE,2
+(VTE) venous thromboembolic disease genetic risk,"Weak negative correlation, no documented pathway to esophageal cancer.",FALSE,2
+Acetone,No confirmed mechanism linking it to esophageal cancer; limited clinical value.,FALSE,2
+Mean platelet (thrombocyte) volume,Negative correlation without established biologic rationale; not practically useful.,FALSE,2
+Age high blood pressure diagnosed_None,Inverse association lacks known explanation; not clinically actionable.,FALSE,2
+Mineral and other dietary supplements_Glucosamine,Weak negative correlation and no mechanism suggesting cancer prevention.,FALSE,2
+Long-term/recurrent antibiotics as child or teenager_No,"Unexpected negative link, lacking credible biological explanation.",FALSE,2
+Doctor diagnosed asthma_None,Novel but no plausible direct link or practical screening value.,FALSE,2
+Mental health conditions ever diagnosed by a professional__of,Negative correlation contradicts typical patterns; no clear causal mechanism.,FALSE,2
+Cholesterol in Large LDL,Inverse correlation not supported by known cholesterol-cancer pathways.,FALSE,2
+"Non-cancer illness code, self-reported | Array 0__hypertension","Hypertension shares lifestyle factors (e.g. smoking, diet); moderately relevant.",TRUE,3
+(EOC) epithelial ovarian cancer genetic risk,"Negative correlation, minimal rationale for cross-cancer protective effect.",FALSE,2
+Cholesterol Blood biochemistry,Contradictory negative association with no strong mechanistic support.,FALSE,2
+(LDL_SF) low density lipoprotein cholesterol genetic risk,No clear mechanism linking LDL genetics to esophageal cancer; weak correlation.,FALSE,2
+3-Hydroxybutyrate,Potential metabolic marker with notable lift; warrants further exploration.,TRUE,3
+(CVD) cardiovascular disease genetic risk,Negative correlation unsubstantiated by common risk factor logic; not useful.,FALSE,2
+LDL direct Blood biochemistry,Unexpected negative correlation with no plausible pathway; limited utility.,FALSE,2
+Ever addicted to a behaviour or miscellanous_infrequent_,Inverse relationship lacks a solid explanatory framework; not clinically useful.,FALSE,2
+Mental health conditions ever diagnosed by a professional__or nerves,Negative correlation; no biological or behavioral explanation currently.,FALSE,2
+Concentration of Very Small VLDL Particles,Unexpectedly inverse correlation; no known mechanism for protective effect.,FALSE,2
+SHBG,Sex hormone binding protein not clearly tied to esophageal cancer; weak correlation.,FALSE,2
+Age angina diagnosed_48,"Shared risk factors (smoking, etc.) could align with esophageal cancer risk; somewhat useful.",TRUE,3
+Home area population density - urban or rural_Scotland - Large Urban Area,Urban lifestyle factors can influence established esophageal cancer risks.,TRUE,3
+(SLE) systemic lupus erythematosus genetic risk,Weak correlation and unclear biological pathway; limited predictive value.,FALSE,2
+Triglycerides,Metabolic factor plausibly linked to obesity/inflammation; moderately relevant.,TRUE,3
+(PSO) psoriasis genetic risk,Negative correlation; no inflammatory rationale suggesting protective effect.,FALSE,2
+Mental health conditions ever diagnosed by a professional__of group,Inverse link lacks mechanism; not supported by typical mental health–cancer data.,FALSE,2
+(HBA1C_DF) glycated haemoglobin genetic risk,Metabolic/inflammatory angle offers some plausibility; could be modestly useful.,TRUE,3
+Acetoacetate,Potential metabolic biomarker (ketone body) with some lift; warrants exploration.,TRUE,3
+Z90.4 - Acquired absence of other parts of digestive tract,Removal might reduce carcinogen exposure; plausible protective effect.,TRUE,3
+Wheeze or whistling in the chest in last year_Yes,Respiratory symptom with no direct mechanistic link; not a clear risk marker.,FALSE,2
+Vitamin D,Negative correlation not well-substantiated for esophageal cancer; limited utility.,FALSE,2
+Hypotension NOS,Novel but lacks a known pathway to esophageal cancer risk or prevention.,FALSE,2
+Mouth/teeth dental problems_Dentures,Weak correlation lacking a robust explanation; limited immediate application.,FALSE,2

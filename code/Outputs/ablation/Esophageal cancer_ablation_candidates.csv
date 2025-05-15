@@ -1,0 +1,38 @@
+feature_name,feature_importance,corr,source-shap,source-KG,source-lit,source-Joint-Shap_Lit,Target
+(AMD) age-related macular degeneration genetic risk,0.0,0.0,0,0,0,1,Esophageal cancer
+(CVD) cardiovascular disease genetic risk,0.0,0.0,0,0,0,1,Esophageal cancer
+(HDL) high density lipoprotein cholesterol genetic risk,0.01,0.0,0,0,1,1,Esophageal cancer
+(HT) hypertension genetic risk,0.0,0.0,0,0,0,1,Esophageal cancer
+(MS) multiple sclerosis genetic risk,0.02,0.0,0,0,1,1,Esophageal cancer
+(RA) rheumatoid arthritis genetic risk,0.0,0.0,0,0,0,1,Esophageal cancer
+(T2D) type 2 diabetes genetic risk,0.0,0.0,0,0,0,1,Esophageal cancer
+Alcohol intake frequency._Daily or almost daily,0.04,0.06,1,0,0,0,Esophageal cancer
+Apolipoprotein A Blood biochemistry,0.05,-0.01,1,1,1,1,Esophageal cancer
+Apolipoprotein A1,0.0,0.0,0,0,0,1,Esophageal cancer
+Arm fat percentage (left),0.05,0.02,1,1,1,0,Esophageal cancer
+Atrial fibrillation and flutter,0.0,0.0,0,0,0,1,Esophageal cancer
+Coffee intake,0.03,0.0,0,1,0,0,Esophageal cancer
+Date of all cause dementia report,0.0,0.0,0,0,0,1,Esophageal cancer
+Direct bilirubin,0.0,0.0,0,0,0,1,Esophageal cancer
+Haemoglobin concentration,0.04,0.0,0,1,0,0,Esophageal cancer
+Hip circumference,0.1,0.02,1,1,0,0,Esophageal cancer
+Home area population density - urban or rural_Scotland - Large Urban Area,0.08,-0.05,1,1,1,0,Esophageal cancer
+LDL direct Blood biochemistry,0.05,-0.06,1,1,1,1,Esophageal cancer
+"Long-standing illness, disability or infirmity_No",0.04,0.0,0,1,0,0,Esophageal cancer
+"Long-standing illness, disability or infirmity_Yes",0.03,0.0,0,0,1,0,Esophageal cancer
+"Medication for cholesterol, blood pressure or diabetes Medication_None",0.09,-0.03,1,0,1,0,Esophageal cancer
+"Medication for cholesterol, blood pressure or diabetes_None",0.05,-0.03,1,0,0,0,Esophageal cancer
+"Medication for cholesterol, blood pressure or diabetes_None of the above",0.02,0.0,0,0,1,0,Esophageal cancer
+Microalbumin in urine,0.03,0.0,0,0,1,1,Esophageal cancer
+"Non-cancer illness code, self-reported | Array 1 gout",0.06,0.22,1,1,1,0,Esophageal cancer
+"Non-cancer illness code, self-reported | Array 2 gout",0.04,0.0,0,0,1,0,Esophageal cancer
+"Non-cancer illness code, self-reported | Array 3 gout",0.02,0.0,0,0,1,0,Esophageal cancer
+Number of self-reported non-cancer illnesses,0.09,0.14,1,1,0,0,Esophageal cancer
+Number of treatments/medications taken,0.08,0.14,1,1,0,0,Esophageal cancer
+Qualifications_None of the above,0.03,0.0,0,0,1,0,Esophageal cancer
+SHBG,0.01,0.0,0,0,1,1,Esophageal cancer
+Treatment/medication code | Array 0 allopurinol,0.31,0.39,1,1,0,0,Esophageal cancer
+Urate,0.81,0.21,1,1,0,0,Esophageal cancer
+Urea,0.03,0.0,0,1,0,0,Esophageal cancer
+Vascular/heart problems diagnosed by doctor_None of the above,0.05,-0.12,1,1,0,0,Esophageal cancer
+Water intake,0.05,0.06,1,0,0,0,Esophageal cancer

@@ -153,7 +153,7 @@ def collect_search_data(queries, targets, total=37e6, min_results_count=20,conca
     return pd.DataFrame(results).sort_values(['Cooccurrence P-Value', 'Query', 'Target', "Co-occurrence Count"], ascending=True).round(3)
 
 
-def load_candidate_queries(query_candidates_filepath: str, do_path_filter: bool = False):
+def load_candidate_queries(query_candidates_filepath: str = None,df:pd.DataFrame = None, do_path_filter: bool = False):
     """
     Loads candidate queries from a CSV file and filters them based on given criteria.
 
@@ -164,9 +164,22 @@ def load_candidate_queries(query_candidates_filepath: str, do_path_filter: bool 
     Returns:
         pd.DataFrame: A DataFrame containing the filtered candidate queries.
     """
-    df_query = pd.read_csv(query_candidates_filepath).drop_duplicates(["feature_name", "cui_nomenclature"])
-    df_query = df_query.loc[df_query["KG_Hits"] <= 0]
-    df_query = df_query.loc[df_query["feature_level_min_kg_hits"] <= 1].drop_duplicates().reset_index(drop=True)
+    # df_query = pd.read_csv(query_candidates_filepath)
+    if df is None:
+        df_query = pd.read_csv(query_candidates_filepath)
+    else:
+        if df is None:
+            print("no candidates file or df given")
+            return None
+        df_query = df  # Use the provided dataframe directly
+
+    df_query = df_query.drop_duplicates(subset=[c for c in ["feature_name","cui_nomenclature"] if c in df_query.columns])
+    if "KG_Hits" in df_query.columns: # KG based filtering, if that stage was run
+        df_query = df_query.loc[df_query["KG_Hits"] <= 0]
+        df_query = df_query.loc[df_query["feature_level_min_kg_hits"] <= 1].drop_duplicates().reset_index(drop=True)
+    else:
+        print("NOTE: Imputing KG_Hits col")
+        df_query["KG_Hits"]=0
     if do_path_filter:
         print(df_query.shape[0], "pre feat imp filter")
         df_query = df_query.loc[(df_query["feature_importance"] > 0) | (df_query["MutualInfoTarget"] >= 0.001)]
@@ -191,6 +204,8 @@ def add_fnames_to_queries(df_query: pd.DataFrame):
     """
     df = df_query.drop_duplicates("feature_name").copy()
     s1 = df.shape[0]
+    if "cui_nomenclature" not in df_query.columns: # handle cases of running on partial data # added
+        df_query["cui_nomenclature"] = df_query["feature_name"]#.str.lower()
     df = df.loc[df["feature_name"].str.lower() != df["cui_nomenclature"].str.lower()]
     print(df.shape[0] - s1, "# rows dropped, where feature name == cui")
     df["feature_name"] = df["feature_name"].str.replace(r"(qualifier value)", "", regex=False).str.replace(r"(qualifier)", "",
@@ -221,6 +236,9 @@ def get_promising_results(result_df: pd.DataFrame, SIGNIFICANT_PVAL=0.4, Drop_Qu
                                             "feature_level_sum_kg_hits", "Co-occurrence Count"], ascending=[True, False, True, True]).copy()
     pick_result_df = pick_result_df.loc[(pick_result_df["min_feat_kgHit"] <= 1) | (pick_result_df['Cooccurrence P-Value'] <= SIGNIFICANT_PVAL) \
                                         | (pick_result_df["Co-occurrence Count"] <= 4)]
+    ## add:
+    pick_result_df = pick_result_df.loc[(pick_result_df['Cooccurrence P-Value'] <= SIGNIFICANT_PVAL) \
+                                    | (pick_result_df["Co-occurrence Count"] <= 10)]                                    
     print(pick_result_df.shape[0], "# rows after feature_level_avg_kg_hits filter")
     # pick_result_df = pick_result_df.query("sim_score>=0.07")
     print(pick_result_df.shape[0], "# rows after (local)sim_score filter")
@@ -228,7 +246,7 @@ def get_promising_results(result_df: pd.DataFrame, SIGNIFICANT_PVAL=0.4, Drop_Qu
     # pick_result_df = pick_result_df.loc[((pick_result_df["feature_importance"] >= 0.001) & (pick_result_df["Co-occurrence Count"] >= 4)) \
     #                                     | (pick_result_df["Co-occurrence Count"] <= 3)] # skip this
     print(pick_result_df.shape[0], "# rows after query-target count filter")
-    pick_result_df = pick_result_df.loc[(pick_result_df["feature_importance"] > 0.001) | (pick_result_df["p_val"] <= 0.2) | (
+    pick_result_df = pick_result_df.loc[(pick_result_df["feature_importance"] > 0.001) | (pick_result_df["p_val"] < 0.2) | (
             pick_result_df["MutualInfoTarget"] > 0.001)]
     # pick_result_df = pick_result_df.loc[(pick_result_df["feature_importance"] >= 0.01) | (pick_result_df["p_val"] < 0.4) | (
     #         pick_result_df["MutualInfoTarget"] >= 0.01)]
@@ -305,12 +323,18 @@ def filter_boring_feature_names_cooc(result_df, SIGNIFICANT_PVAL=0.6, cooc_count
     return boring_feature_names_list
 
 
-def run_search_pubmed(config,do_path_filter=None,SAVE_OUTPUTS:bool=True):
+def run_search_pubmed(config, df=None, do_path_filter=None, SAVE_OUTPUTS: bool = True):
     """
     Runs the PubMed search and analysis pipeline based on the given configuration.
 
     Parameters:
         config (dict): Configuration parameters for the pipeline.
+        df (pd.DataFrame, optional): DataFrame containing query candidates. If not provided, the function will load the file from 'QUERY_CANDIDATES_FILE'.
+        do_path_filter (bool, optional): Whether to apply path length filtering.
+        SAVE_OUTPUTS (bool, optional): Whether to save the output results.
+
+    Returns:
+        pd.DataFrame: The result dataframe after processing the queries and PubMed search.
     """
     # Set Entrez API email and key
     Entrez.email = config.get('ENTREZ_EMAIL', os.environ.get('ENTREZ_EMAIL'))
@@ -326,8 +350,13 @@ def run_search_pubmed(config,do_path_filter=None,SAVE_OUTPUTS:bool=True):
         targets = [" OR ".join("({})".format(x) for x in targets)]
     print("Targets:", targets)
 
-    # Load candidate queries
-    df_query = load_candidate_queries(config['QUERY_CANDIDATES_FILE'], do_path_filter=do_path_filter)
+
+    # # Load + process candidate queries
+    # df_query = load_candidate_queries(config['QUERY_CANDIDATES_FILE'], do_path_filter=do_path_filter)
+    if df is None:
+        df_query = load_candidate_queries(config['QUERY_CANDIDATES_FILE'], do_path_filter=do_path_filter)
+    else:
+        df_query = load_candidate_queries(df=df, do_path_filter=do_path_filter)
 
     # Add feature names to queries
     df_query = add_fnames_to_queries(df_query)
@@ -335,7 +364,7 @@ def run_search_pubmed(config,do_path_filter=None,SAVE_OUTPUTS:bool=True):
 
     # Get feature name queries
     fname_queries_subset = set(df_query["feature_name"].str.strip().unique())
-    # print(f"fname_queries_subset:\n{fname_queries_subset}")
+    print(f"fname_queries_subset:\n{fname_queries_subset}")
 
     # Collect search data for feature names and targets
     fname_result_df = collect_search_data(fname_queries_subset, targets)

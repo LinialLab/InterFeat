@@ -162,3 +162,5 @@ cython_debug/
 /ukbb-hack
 *.sublime-workspace
 code/gallbladder__raw_df.parquet
+/code/Outputs/ablation copy
+/code/Outputs/ablation/minimerge

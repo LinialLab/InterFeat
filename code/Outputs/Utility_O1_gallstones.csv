@@ -1,0 +1,52 @@
+Feature_Name,Util_Explanation,Utility,Utility_Score
+missing_Essential hypertension,"The negative correlation is small and not well established as a risk factor for gallbladder disease, offering little practical value in clinical decision-making or screening.",FALSE,1
+Home area population density - urban or rural_England/Wales - Village - less sparse,"While intriguing from an epidemiological perspective, the correlation is weak and overshadowed by individual metabolic/lifestyle factors, limiting direct clinical utility.",FALSE,2
+Skin colour_Very fair,"No known biological mechanism links very fair skin color to gallbladder disease; the correlation is negligible, with minimal potential for actionable use.",FALSE,1
+Actinic keratosis,No recognized connection or mechanism with gallbladder disease; extremely weak correlation provides no meaningful clinical application.,FALSE,1
+Frequency of tiredness / lethargy in last 2 weeks_Nearly every day,Fatigue is highly nonspecific and can arise from many conditions; it offers limited direct usefulness in predicting gallbladder disease risk.,FALSE,2
+Apolipoprotein A Blood biochemistry,"Ties to cholesterol and lipid metabolism may be relevant for gallstone pathogenesis; as a measurable biomarker, it has moderate potential utility in risk assessment.",TRUE,3
+(BC) breast cancer genetic risk,Extremely weak correlation with no strong mechanism for gallbladder disease; not clinically informative for gallbladder risk.,FALSE,1
+Sodium in urine,"Might reflect dietary salt intake and fluid balance, but the very weak correlation offers little actionable insight for gallbladder disease risk.",FALSE,2
+Cholesterol in Medium HDL,"Though HDL relates to cholesterol metabolism (a factor in gallstone formation), the correlation here is small, suggesting only mild practical utility.",FALSE,2
+(AST) asthma genetic risk,"No clear biological rationale or robust correlation with gallbladder disease, yielding negligible clinical utility.",FALSE,1
+Major dietary changes in the last 5 years_No,Diet is an important contributor to gallstone risk; tracking recent dietary stability/changes can moderately inform risk stratification.,TRUE,3
+(HT) hypertension genetic risk,"A small positive correlation possibly reflecting shared metabolic pathways, but currently of limited direct utility for gallbladder risk.",FALSE,2
+(CED) coeliac disease genetic risk,"Weak correlation; although there may be autoimmune or GI overlap, this is not strong enough to be clinically actionable for gallbladder disease risk.",FALSE,2
+(HBA1C_DF) glycated haemoglobin genetic risk,"Genetic propensity for higher HbA1c (metabolic dysregulation) may inform gallbladder disease risk, offering moderate relevance in assessing overall metabolic burden.",TRUE,3
+"Medication for cholesterol, blood pressure, diabetes, or take exogenous hormones_Blood pressure medication",Weak correlation and no strong evidence linking these meds directly to gallbladder disease; slight practical value for risk stratification.,FALSE,2
+Number of self-reported non-cancer illnesses,General comorbidity count can reflect overall health burden; moderately useful for identifying higher-risk patients.,TRUE,3
+SHBG,Hormone-binding protein with uncertain gallbladder link; limited applicability to everyday risk prediction or management.,FALSE,2
+Arm fat percentage (left),"While obesity and fat distribution matter, arm fat percentage alone is not a strong or standard marker for gallbladder disease risk.",FALSE,2
+(CAD) coronary artery disease genetic risk,Minimal or no direct gallbladder linkage; offers negligible value for gallbladder disease assessment.,FALSE,1
+"Complications of cardiac/vascular device, implant, and graft",Unrelated complications that do not meaningfully inform gallbladder disease risk or management.,FALSE,1
+LDL direct Blood biochemistry,"LDL is central to cholesterol metabolism, but weak/negative correlation here diminishes its direct clinical utility in gallbladder disease.",FALSE,2
+A09.9 - Gastroenteritis and colitis of unspecified origin,"GI inflammation might overlap with biliary disease symptoms, but correlation is weak and not routinely actionable.",FALSE,2
+(LDL_SF) low density lipoprotein cholesterol genetic risk,"Genetic predisposition to elevated LDL could affect cholesterol gallstones, but evidence is too weak for robust clinical use.",FALSE,2
+Vitamin D,"Possible minor role in metabolism/inflammation, but negative correlation is weak and not strongly actionable in gallbladder care.",FALSE,2
+Sleep - Overall average,General health factor with unclear and weak link to gallbladder disease; low direct utility for clinical decisions.,FALSE,2
+(AD) alzheimer's disease genetic risk,No recognized mechanistic overlap with gallbladder disease; offers no practical predictive or management utility.,FALSE,1
+(SCZ) schizophrenia genetic risk,Psychiatric genetic risk does not meaningfully inform gallbladder disease risk or management.,FALSE,1
+Started insulin within one year diagnosis of diabetes_No,Diabetes severity (requiring insulin early) can raise gallbladder risk; moderate usefulness for risk stratification.,TRUE,3
+Bipolar and major depression status_None,"Mood disorder status has limited direct bearing on gallbladder disease, offering slight or indirect utility at best.",FALSE,2
+Z90.7 - Acquired absence of genital organ(s),No clear pathophysiologic link to gallbladder disease; not useful in gallbladder risk profiling.,FALSE,1
+Other specified gastritis,Non-specific GI inflammation connection is weak; only marginally useful for gallbladder risk considerations.,FALSE,2
+Townsend deprivation index at recruitment,"Socioeconomic deprivation can correlate with obesity and healthcare access, making it moderately relevant to gallbladder disease.",TRUE,3
+Treatment/medication code | Array 0__omeprazole,"PPI usage is not strongly associated with gallbladder disease; correlation is weak, so limited utility.",FALSE,2
+(AAM) age at menopause genetic risk,"Hormonal influences do matter, but negative correlation is weak; slight potential utility only.",FALSE,2
+M79.66 - Pain in limb (Lower leg),No direct or recognized link to gallbladder pathology; no practical predictive value.,FALSE,1
+Acetone,"Reflects certain metabolic states (ketosis), but not strongly tied to gallbladder disease for clinical application.",FALSE,2
+Ever addicted to a behaviour or miscellanous_Yes,Behavioral addiction lacks clear association with gallbladder disease risk; no actionable utility.,FALSE,1
+Time spend outdoors in summer_2,"Might link to healthier habits, but correlation is too weak to yield concrete clinical utility.",FALSE,2
+Acetate,"A short-chain fatty acid with possible metabolic influences, but no strong evidence for gallbladder disease management.",FALSE,2
+"Epilepsy, recurrent seizures, convulsions",No known mechanism or clinical reason to connect seizure disorders with gallbladder disease.,FALSE,1
+Behavioural and miscellaneous addictions_Something else not mentioned,No recognized relationship to gallbladder disease; no clear utility.,FALSE,1
+(ISS) ischaemic stroke genetic risk,"Shares some metabolic risk factors with gallbladder disease, but correlation is weak; limited clinical usefulness.",FALSE,2
+(POAG) primary open angle glaucoma genetic risk,"Distinct pathophysiology, offering no relevant insight for gallbladder disease risk.",FALSE,1
+Behavioural and miscellaneous addictions_A behaviour,Lacks specific linkage to gallbladder disease; not useful in risk or management.,FALSE,1
+Fed-up feelings_Yes,"Psychological distress is non-specific; while it can co-occur with chronic illness, it offers little direct predictive utility.",FALSE,2
+(RA) rheumatoid arthritis genetic risk,"Systemic inflammation might tangentially affect gallbladder, but correlation is weak; slight potential utility only.",FALSE,2
+Concentration of Very Large HDL Particles,Higher HDL could reduce cholesterol gallstones; moderately useful lipid marker for gallbladder risk profiling.,TRUE,3
+Degeneration of intervertebral disc,No connection to gallbladder disease risk; provides no clinically relevant information.,FALSE,1
+Neuroticism score,"Weak psychological correlate, not robustly predictive or clinically actionable for gallbladder disease.",FALSE,2
+Concentration of Very Large VLDL Particles,Elevated VLDL (triglyceride-rich) can influence bile cholesterol; moderately useful metabolic marker for risk assessment.,TRUE,3
+Apolipoprotein B to Apolipoprotein A1 ratio,"Reflects atherogenic vs. protective lipoproteins; relevant to cholesterol stone risk, moderately useful in lipid-related gallbladder assessment.",TRUE,3

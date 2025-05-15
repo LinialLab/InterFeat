@@ -20,7 +20,8 @@ from math import log10, floor
 from sklearn import datasets
 import networkx as nx
 from itertools import combinations
-
+from pandas.api.types import is_sparse, is_numeric_dtype
+from pandas.arrays import SparseArray
 import spacy
 import scispacy
 from itertools import compress
@@ -176,8 +177,9 @@ def get_split_mask(tree, feature, node_id):
 
     return mask.flatten()  # Flatten the final mask
 
+
 def optimal_split_info(feature, target, handle_missing=True, print_results=False, return_results=True, max_depth=2,
-                       criterion='gini', min_support_pct=0.05, min_support=20, focus_on_lift=True,
+                       criterion='gini', min_support_pct=1, min_support=30, focus_on_lift=True,
                        feature_name="feature",missing_approach_median=False):
     """
     Calculates lift and support for the optimal split(s) of a feature based on the
@@ -186,8 +188,45 @@ def optimal_split_info(feature, target, handle_missing=True, print_results=False
     Returns only the best split (or range) based on the criterion and minimum support.
     Handles range-style splits and NaN values (using imputation).
     """
+    # try:
+    #     if is_sparse(feature.dtype):# added
+    #         feature = feature.sparse.to_dense()          # ← densify just this column
+    # except:
+    #     print("err,  if is_sparse(feature.dtype)")
 
-    if handle_missing and np.issubdtype(feature.dtype, np.number):
+    # try:
+    #     if isinstance(feature, pd.Series) and feature.sparse.density < 1.0:  # Check if it's a sparse Series
+    #         feature = feature.sparse.to_dense()  # Convert to dense if it's sparse
+    # except:
+    #     print("err - isinstance(feature, pd.Series) and feature.sparse.density < 1.0" )
+
+    # ## new:
+    # # Ensure the dtype is numerical after densifying the feature
+    # if not np.issubdtype(feature.dtype, np.number):
+    #     feature = feature.astype(np.float64)  # Cast to float64 if necessary
+
+    """
+    Handles sparse data types and ensures numerical dtypes before processing.
+    """
+    # Convert SparseArray (from .values of sparse DataFrame) to dense numpy array
+    if isinstance(feature, SparseArray):
+        feature = feature.to_dense()
+    
+    # Handle sparse pandas Series (convert to dense numpy array)
+    if isinstance(feature, pd.Series) and is_sparse(feature):
+        feature = feature.sparse.to_dense().values
+    
+    # Ensure feature is a numpy array (not Series)
+    if isinstance(feature, pd.Series):
+        feature = feature.values
+    
+    # Force numerical dtype after conversions (avoid SparseDtype leftovers)
+    if not np.issubdtype(feature.dtype, np.number):
+        feature = feature.astype(np.float64)
+
+
+    if handle_missing and np.issubdtype(feature.dtype, np.number): # ORIG
+    ### accept both regular and pandas‑sparse numeric columns
         if missing_approach_median:
             fill_value = np.nanmedian(feature)
         else:
@@ -281,7 +320,7 @@ def optimal_split_info(feature, target, handle_missing=True, print_results=False
 
 
 
-def get_optimal_splits_results(df,y,max_depth:int=1, criterion='gini', min_support_pct=0.5,
+def get_optimal_splits_results(df,y,max_depth:int=1, criterion='gini', min_support_pct=1,
                                           focus_on_lift=True,):
 
     results = []
@@ -431,7 +470,8 @@ def split_pipe_delimited_columns(df, columns, prefix=True):
 def cv_eval(X, y, n_cv=5, model=None):
     score_metrics = ["roc_auc", 'accuracy', 'precision', "recall", "average_precision", "f1"]  # ,"balanced_accuracy"
     if model is None:
-        model = CatBoostClassifier(iterations=500,
+        model = CatBoostClassifier(
+            # iterations=700,
                                    auto_class_weights="SqrtBalanced"  # SqrtBalanced "Balanced"
                                    , early_stopping_rounds=50
                                    # task_type="GPU",
@@ -455,11 +495,11 @@ def cv_eval(X, y, n_cv=5, model=None):
 def IPW_resample(df, propensity_cols_list=['Sex', 'age', 'age_X_sex', "Body mass index (BMI)(participant - p23104_i0)"],
                  K_IPW_RATIO=9, X=None, get_ipw_shap=False):
     # K_IPW_RATIO = 1 if FAST else 3 #3
-
-    X_ipw = OrdinalEncoderPandas().fit_transform(df[propensity_cols_list])
+    # change - overwrite
+    X_ipw = OrdinalEncoderPandas().set_output(transform="default").fit_transform(df[propensity_cols_list])
     X_ipw["eid"] = df["eid"]
     clf_cal = CalibratedClassifierCV(
-        estimator=HistGradientBoostingClassifier(max_iter=300, categorical_features="from_dtype"  # ["Sex"] #
+        estimator=HistGradientBoostingClassifier(max_iter=200, categorical_features="from_dtype"  # ["Sex"] #
                                                  , random_state=42, ),
         # estimator=LogisticRegression(),
         method="isotonic"
@@ -547,7 +587,7 @@ def get_cb_shap(X, y, categorical_cols, text_cols, return_shapVal=True,get_inter
         # task_type="GPU",
         # cat_features=X2.select_dtypes(["O","string","category","object"]).columns.to_list(),
         , verbose=False,
-        eval_fraction=0.05,
+        eval_fraction=0.06,
         cat_features=(categorical_cols + text_cols),
         # text_cols - seemingly broken in current catboost?
         # cat_features=categorical_cols,#+text_cols,
@@ -582,7 +622,7 @@ def get_cb_shap(X, y, categorical_cols, text_cols, return_shapVal=True,get_inter
 def wrangle_df_icu(icu_feature_terms: pd.DataFrame,filter_feat_imp=True):
     print(icu_feature_terms.shape,"# feats preclean")
     if filter_feat_imp:
-        icu_feature_terms = icu_feature_terms.loc[(icu_feature_terms["feature_importance"] > 0.0009) |(icu_feature_terms["MutualInfoTarget"] >= 0.001)|(icu_feature_terms["p_val"] < 0.06) ]  # filter a bit - optionally
+        icu_feature_terms = icu_feature_terms.loc[(icu_feature_terms["feature_importance"] >= 0.0009) |(icu_feature_terms["MutualInfoTarget"] >= 0.001)|(icu_feature_terms["p_val"] < 0.06) ]  # filter a bit - optionally
         print(icu_feature_terms.shape,"# feats after mini filt and load")
     icu_feature_terms = icu_feature_terms.reset_index(drop=True).copy()
     
@@ -694,7 +734,8 @@ def get_multiple_nel(text, nlp,do_print=False):
     return entities_with_cuis
 
 ### copy from Link_Semmed_cuis.py: (fat version)
-def link_kg_concepts(FEATURES_REPORT_PATH:str, CANDIDATE_NOVEL_CUIS_FILEPATH:str, TARGET_NAME:str, additional_target_cui_terms_list=[], SAVE_OUTPUTS = True, MIN_EVIDENCE_FILTER = 2,
+def link_kg_concepts(FEATURES_REPORT_PATH:str="feature_report.csv", CANDIDATE_NOVEL_CUIS_FILEPATH:str="candidate_novel_cuis_output.csv",
+ TARGET_NAME:str=None, additional_target_cui_terms_list=[], SAVE_OUTPUTS = True, MIN_EVIDENCE_FILTER = 2,
     df_features:pd.DataFrame= None, do_feat_imp_filt:bool=True,
                      REMOVE_CUI_TERMS_LIST=['Prieto syndrome', "Polarized Reflectance Spectroscopy",
                                             # mistaken extraction from PRS - drop it for now for cleanliness
@@ -711,10 +752,11 @@ def link_kg_concepts(FEATURES_REPORT_PATH:str, CANDIDATE_NOVEL_CUIS_FILEPATH:str
                                             "Average" , "Comparison" , "Lost" , "Yes - Presence findings", 
                                             "Pharmaceutical Preparations","Physicians","Mother (person)","Father (person)","Severe (severity modifier)",
                                             ]
-                     , input_kg_path="../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
-                         "T078", ], sem_similarity_threshhold_score=0.15, # 0.15
+                     , input_kg_path="../../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
+                         "T078", ], sem_similarity_threshhold_score=0.14, # 0.15
                      top_cutoff_simMin = 0.39,top_cutoff_kgHit = 2):
-
+    if TARGET_NAME is None:
+        print("WARNING! TARGET_NAME missing!")
     # global nlp, df_kg_sep, df_hits, G
     global df_kg_sep, df_hits ## maybe disable this..
 
@@ -1101,8 +1143,8 @@ def link_kg_concepts(FEATURES_REPORT_PATH:str, CANDIDATE_NOVEL_CUIS_FILEPATH:str
         # df_temp = df_hits.query("shortest_path_length>2 & feature_level_avg_kg_hits<=0.75")
         df_temp.to_csv(CANDIDATE_NOVEL_CUIS_FILEPATH, index=False)
         display(df_temp)
-    else:
-        return df_hits
+    # else: # changed to always return
+    return df_hits
 
 
 ## slim in that some parts disabled/commented out (semantic similarity filter etc'): renamed from link_kg_concepts       
@@ -1122,8 +1164,8 @@ def link_kg_concepts_slim(FEATURES_REPORT_PATH, CANDIDATE_NOVEL_CUIS_FILEPATH, T
                                             "Average" , "Comparison" , "Lost" , "Yes - Presence findings", 
                                             "Pharmaceutical Preparations","Physicians","Mother (person)","Father (person)","Severe (severity modifier)",
                                             ]
-                     , input_kg_path="../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
-                         "T078", ], sem_similarity_threshhold_score=0.15,
+                     , input_kg_path="../../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
+                         "T078", ], sem_similarity_threshhold_score=0.14, # 0.15
                      # top_cutoff_simMin = 0.39,top_cutoff_kgHit = 2,
                      FAST=False,
                     return_df=True

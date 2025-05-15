@@ -1,0 +1,38 @@
+feature_name,feature_importance,corr,source-shap,source-KG,source-lit,source-Joint-Shap_Lit,Target
+(CVD) cardiovascular disease genetic risk,0.01,0.0,0,0,1,0,Gout
+(HDL) high density lipoprotein cholesterol genetic risk,0.02,0.0,0,0,1,1,Gout
+(MS) multiple sclerosis genetic risk,0.02,0.0,0,0,1,1,Gout
+3-Hydroxybutyrate,0.0,0.0,0,0,0,1,Gout
+Acetone,0.0,0.0,0,0,0,1,Gout
+Alcohol intake frequency._Daily or almost daily,0.04,0.0,0,1,0,0,Gout
+Apolipoprotein A Blood biochemistry,0.04,-0.01,1,1,1,1,Gout
+Arm fat percentage (left),0.02,0.0,0,0,1,0,Gout
+Congestive heart failure (CHF) NOS,0.0,0.0,0,0,0,1,Gout
+Date of all cause dementia report,0.0,0.0,0,0,0,1,Gout
+Home area population density - urban or rural_Scotland - Large Urban Area,0.08,-0.05,1,1,1,0,Gout
+Home area population density - urban or rural_Scotland - Other Urban Area,0.01,0.0,0,0,1,0,Gout
+LDL direct Blood biochemistry,0.06,-0.06,1,1,1,1,Gout
+Leg fat-free mass (right),0.02,0.0,0,0,1,0,Gout
+"Long-standing illness, disability or infirmity_No",0.05,-0.09,1,1,0,0,Gout
+"Long-standing illness, disability or infirmity_Yes",0.02,0.0,0,0,1,0,Gout
+Mean platelet (thrombocyte) volume,0.0,0.0,0,0,0,1,Gout
+"Medication for cholesterol, blood pressure or diabetes Medication_None",0.06,-0.03,1,0,0,0,Gout
+"Medication for cholesterol, blood pressure or diabetes_None",0.04,-0.03,1,0,0,0,Gout
+Mental health conditions ever diagnosed by a professional group,0.03,0.0,0,1,0,0,Gout
+Microalbumin in urine,0.03,0.0,0,1,1,1,Gout
+Neuroticism score,0.0,0.0,0,0,0,1,Gout
+"Non-cancer illness code, self-reported | Array 1 gout",0.06,0.22,1,0,0,0,Gout
+Number of self-reported non-cancer illnesses,0.09,0.14,1,1,0,0,Gout
+Number of treatments/medications taken,0.07,0.14,1,1,0,0,Gout
+Pulse wave reflection index,0.0,0.0,0,0,0,1,Gout
+Qualifications_None of the above,0.02,0.0,0,0,1,0,Gout
+SHBG,0.0,0.0,0,0,0,1,Gout
+Standing height,0.05,0.01,1,1,1,1,Gout
+Treatment/medication code | Array 0 allopurinol,0.31,0.39,1,0,0,0,Gout
+Urate,0.82,0.21,1,0,0,0,Gout
+Urea,0.04,0.0,0,1,0,0,Gout
+Vascular/heart problems diagnosed by doctor_None of the above,0.04,-0.12,1,1,0,0,Gout
+Water intake,0.06,0.06,1,1,0,0,Gout
+Weight (p21002),0.13,0.04,1,1,1,1,Gout
+age,0.04,0.0,0,1,0,0,Gout
+had_disease_past,0.01,0.0,0,0,1,0,Gout

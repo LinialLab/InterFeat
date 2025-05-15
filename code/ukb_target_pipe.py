@@ -25,6 +25,8 @@ from catboost import CatBoostClassifier
 from sklearn.feature_selection import mutual_info_classif, SelectFromModel
 from sklearn.linear_model import ElasticNet
 import shap
+from sklearn import set_config
+set_config(transform_output="pandas") 
 
 shap.initjs()
 
@@ -88,11 +90,11 @@ def ipw_downsampling(df: pd.DataFrame,
     return df.reset_index(drop=True)
 
 
-def make_target_df( DIAG_TIDY_PATH =  "../ukbb-hack/df_diag_tidy.parquet",#"ukbb-hack/df_diag_tidy.parquet",  # ../../
+def make_target_df( DIAG_TIDY_PATH =  "../../ukbb-hack/df_diag_tidy.parquet",#"ukbb-hack/df_diag_tidy.parquet",  # ../../
         # phenocodes_map_file_path="../../Phecode_map_v1_2_icd10_beta.csv.zip",  # ../../
 phenocodes_map_file_path="Phecode_map_v1_2_icd10_beta.csv.zip", #"../../Phecode_map_v1_2_icd10_beta.csv.zip"#"../../Phecode_map_v1_2_icd10_beta.csv.zip"
 phenocodes_def_file_path="phecode_definitions1.2.csv.zip",#"../../pphecode_definitions1.2.csv.zip"
-EHR_FEAT_TIDY_PATH = "../df_ukbb_aux_tidy.parquet",
+EHR_FEAT_TIDY_PATH = "../../df_ukbb_aux_tidy.parquet",
         TARGET_CODES_LIST=("K80", "K81", "K82")  ## Cholelithiasis = gallstones
         , FILTER_HAS_ANY_FUTURE_DIAGS=True  ## filter to keep cases with any future/post 2010 diagnoses = future record acquisition. May be leaky or unneeded
         , FILTER_HAS_ANY_DIAG_IDS=False
@@ -104,7 +106,7 @@ EHR_FEAT_TIDY_PATH = "../df_ukbb_aux_tidy.parquet",
         , FILTER_FEMALES_ONLY=False # True ## Keep only females in data. For Gallstones - ROCauc is stable on this subset, as are few top features seemingly.
         , PIVOT_DIAGS_COL_NAME="phenotype"  # "code" #"phenotype"
         , K_diag_thresh_value=200  # 800#250#500
-        , FAST_SAMPLE_SIZE=13_000  # 60_000
+        , FAST_SAMPLE_SIZE=12_000  # 60_000
         , DO_IPW_SAMPLING=False
         # ## get diag feats by z-score, most extreme, or time since most recent value. Recentmost i much faster to extract:
         , GET_EXTREMETMOST_DIAGFEATS=False
@@ -507,6 +509,28 @@ EHR_FEAT_TIDY_PATH = "../df_ukbb_aux_tidy.parquet",
 
 # In[57]:
 
+def final_matrix_and_names(pipeline, X, transformed_feature_names):
+    """
+    Returns
+        X_final  – the design matrix *after* optional SelectKBest
+        feat_names_final – the matching column names
+    Works both when 'FS' (SelectKBest) exists and when it doesn’t.
+    """
+    # 1️⃣  run the column‑transformer
+    # X_pre = pipeline.named_steps["preprocessor"].transform(X)
+    X_pre = pipeline[-2].transform(X) # replace
+
+    # 2️⃣  apply SelectKBest only if it is part of the pipeline
+    if "FS" in pipeline.named_steps and hasattr(pipeline.named_steps["FS"], "get_support"):
+        selector = pipeline.named_steps["FS"]
+        mask = selector.get_support()              # <‑‑ the boolean mask you asked about
+        X_final = X_pre[:, mask]                   # keeps sparsity
+        feat_names_final = np.array(transformed_feature_names)[mask]
+    else:
+        X_final = X_pre
+        feat_names_final = transformed_feature_names
+
+    return X_final, feat_names_final
 
 # In[60]:
 
@@ -539,7 +563,7 @@ EHR_FEAT_TIDY_PATH = "../df_ukbb_aux_tidy.parquet",
 
 
 def model_features(df: pd.DataFrame, FAST=False
-                   , CORR_THRESH=0.91
+                   , CORR_THRESH=0.9
                    , do_stat_fs_filt=True
                    , do_boruta_fs=False
                    , do_mi_fs_filt=False
@@ -553,12 +577,15 @@ def model_features(df: pd.DataFrame, FAST=False
                                               'PRS genetic principal components | Array 1',
                                               'PRS genetic principal components | Array 2',
                                               'PRS genetic principal components | Array 3',
-                                              'PRS genetic principal components | Array 4', ]
+                                              'PRS genetic principal components | Array 4',
+                                              # "Method of diagnosis when first had COVID-19",
+                                               ]
                    , do_shap = True, return_res:bool=True,
                    pval_ceiling=0.2,
                     get_feature_importances=True,
                    add_missings_indicator:bool = False,
-                   do_no_selection = False ,GET_EXTRA_STATS=True
+                   do_no_selection = False ,GET_EXTRA_STATS=True,
+                   keep_top_k_only:bool = False
                    ):
     if not USE_CAT_COLS:
         to_drop_text_cols_list = df.select_dtypes(["O", "string", "category"]).columns.tolist()
@@ -573,11 +600,11 @@ def model_features(df: pd.DataFrame, FAST=False
 
     # In[67]:
     cfs = SmartCorrelatedSelection(
-        threshold=min(1.11 * CORR_THRESH, 0.99),
+        threshold=min(1.12 * CORR_THRESH, 0.99),
         # method=dcor.distance_correlation ## slower but more flexible, and leaves more cases
         # ,method="kendall",
         # ,method= "spearman",
-        ).fit(OrdinalEncoderPandas(return_pandas_categorical=True).fit_transform(X).sample(frac=0.75))  #
+        ).fit(OrdinalEncoderPandas(return_pandas_categorical=True).set_output(transform="default").fit_transform(X).sample(frac=0.66))  
     ## warning! This doesn't keep the text columns natively!
     # keep_feats = list(set(cfs.get_feature_names_out()+["Sex","Age"]+X.select_dtypes(["O","string","category","boolean"]).columns.tolist()))
     keep_feats = list(set(cfs.get_feature_names_out() + ["Sex", "Age"] + list_features_high_cardinality))  ##
@@ -586,7 +613,7 @@ def model_features(df: pd.DataFrame, FAST=False
     # In[68]:
     ## used in FS parts
     # print("raw X cols", X.shape[1])
-    X_encoded = OrdinalEncoderPandas(return_pandas_categorical=True).fit_transform(X.drop(columns=list_features_high_cardinality, errors="ignore"))
+    X_encoded = OrdinalEncoderPandas(return_pandas_categorical=True).set_output(transform="default").fit_transform(X.drop(columns=list_features_high_cardinality, errors="ignore"))
     X_encoded = SimpleImputer().set_output(transform="pandas").fit_transform(X_encoded)
     for c in X.select_dtypes(["O", "string", "category"]).columns.tolist():
         if c in X_encoded.columns:
@@ -606,7 +633,7 @@ def model_features(df: pd.DataFrame, FAST=False
         mi_vals_mask = mutual_info_classif(X_encoded, y,  # n_neighbors=5,
                                            discrete_features=discrete_features
                                            # discrete_features=X_encoded.select_dtypes(["O","category"]).columns # fails
-                                           ) > 0.0009
+                                           ) > 0.001
         print(sum(mi_vals_mask))
         keep_feats = list(set(X_encoded.loc[:, mi_vals_mask].columns.tolist() + ["Sex", "Age"] + list_features_high_cardinality))
 
@@ -633,7 +660,7 @@ def model_features(df: pd.DataFrame, FAST=False
                                        # threshold= 0.99999
                                        # method=dcor.distance_correlation ## slower but more flexible, and leaves more cases
                                        method="spearman",  # "kendall",
-                                       estimator=DecisionTreeClassifier()  # min_samples_leaf=3
+                                       estimator=DecisionTreeClassifier(random_state=42)  # min_samples_leaf=3
                                        ).fit(X_encoded, y)
         # keep_feats = list(set(cfs.get_feature_names_out()+["Sex","Age"]+X.select_dtypes(["O","string","category","boolean"]).columns.tolist()))
         keep_feats = list(set(cfs.get_feature_names_out() + ["Sex", "age"] + list_features_high_cardinality))  ##
@@ -663,8 +690,8 @@ def model_features(df: pd.DataFrame, FAST=False
             estimator=CatBoostClassifier(random_state=42, verbose=0, # ,task_type="GPU"
                 max_depth=7),
             # LGBMClassifier(random_state=42)#, verbose=-1),
-            n_estimators=70 if FAST else 350 # "auto",  # 600,#
-            ,keep_weak=True, perc=33, max_iter=7 if FAST else 15,
+            n_estimators=50 if FAST else 300 # "auto",  # 600,#
+            ,keep_weak=True, perc=33, max_iter=7 if FAST else 13,
             random_state=0, importance="fastshap" )
         # find all relevant features
         bs_feat_selector.fit(X=X_encoded, y=y)  # 100
@@ -686,11 +713,10 @@ def model_features(df: pd.DataFrame, FAST=False
     # In[77]:
     clf_model = CatBoostClassifier(
         auto_class_weights="SqrtBalanced",  # SqrtBalanced "Balanced"
-        early_stopping_rounds=90,
-        # task_type="GPU",
+        early_stopping_rounds=60,
         # cat_features=X.select_dtypes(["O","string","category"]).columns.to_list(),
-        verbose=False, eval_fraction=0.07,
-        # task_type="GPU"
+        verbose=False, eval_fraction=0.06,
+        task_type="GPU"
         # subsample=0.8
         )
     model = clf_model
@@ -741,7 +767,7 @@ def model_features(df: pd.DataFrame, FAST=False
         categorical_pipeline = Pipeline(steps=[
             # ('bool_to_str', BooleanToStringTransformer()),  # Convert booleans to strings
             ('imputer', SimpleImputer(strategy='constant', fill_value='missing', add_indicator=add_missings_indicator)),  # ,add_indicator=True
-            ('onehot', OneHotEncoder(handle_unknown='ignore', min_frequency=20,
+            ('onehot', OneHotEncoder(handle_unknown='ignore', min_frequency=30,
                                      sparse_output=False,  ## sparse outputs can cause issues wit hshap maybe?
                                      max_categories=95)),
             ],
@@ -749,7 +775,7 @@ def model_features(df: pd.DataFrame, FAST=False
         # Preprocessing for text data
         ## warning - multiple text columns needs different processing!
         text_pipeline = Pipeline(steps=[
-            ('vectorizer', TfidfVectorizer(min_df=20, max_df=0.95, ngram_range=(1, 2), max_features=300,stop_words="english",
+            ('vectorizer', TfidfVectorizer(min_df=40, max_df=0.9, ngram_range=(1, 2), max_features=700,stop_words="english",
                                            ))
             ],
             )
@@ -758,7 +784,7 @@ def model_features(df: pd.DataFrame, FAST=False
         categorical_pipeline = Pipeline(steps=[
             # ('bool_to_str', BooleanToStringTransformer()),  # Convert booleans to strings
             ('imputer', SimpleImputer(strategy='constant', fill_value='missing', add_indicator=add_missings_indicator)),  # ,add_indicator=True
-            ('onehot', OneHotEncoder(handle_unknown='ignore', min_frequency=25,
+            ('onehot', OneHotEncoder(handle_unknown='ignore', min_frequency=30,
                                      sparse_output=False,  ## sparse outputs can cause issues wit hshap maybe?
                                      max_categories=95)),
             ("FS_cat",SelectFdr(alpha=0.7)) # score_func=chi2,
@@ -771,9 +797,9 @@ def model_features(df: pd.DataFrame, FAST=False
         text_pipeline = Pipeline(steps=[
             # ('imputer', SimpleImputer(strategy='constant', fill_value='missing')), # causes error
             # ## CountVectorizer
-            ('vectorizer', TfidfVectorizer(min_df=30, max_df=0.9, ngram_range=(1, 2), max_features=250,stop_words="english",
+            ('vectorizer', TfidfVectorizer(min_df=30, max_df=0.9, ngram_range=(1, 2), max_features=700,stop_words="english",
                                            )),
-            ("FS_text", SelectFdr(alpha=0.66))  # score_func=chi2,
+            ("FS_text", SelectFdr(alpha=0.7))  # score_func=chi2,
             ],
             )
 
@@ -811,12 +837,33 @@ def model_features(df: pd.DataFrame, FAST=False
                                 )],
                         # memory="pipeline_cache"
                         )
+    if keep_top_k_only: ## not working - sparse issues + feature names not supported
+        print("Keeping top K features")
+        ## try mrmr? 
+        try:
+            from feature_engine.selection import MRMR
+        except:()
+        pipeline = Pipeline(steps=[('preprocessor', preprocessor),
+                           ("FS",SelectKBest(score_func=mutual_info_classif, k=500)), # could use mrmr also or a faster fs metric/method?
+                           # ("FS",MRMR(max_features=200,method="MIQ", regression=False, random_state=3,n_jobs=-2,confirm_variables=False)),
+
+                           # ("FS",SelectFromModel(ElasticNet(l1_ratio=0.2),threshold = "5.05*mean")), ## may noit actually affect shap ?
+                           # ("CorrFS",SmartCorrelatedSelection(threshold= 0.98,#method=dcor.distance_correlation,
+                           #                                    selection_method="variance")),
+                           ('classifier',
+                            clf_model
+                            )])
     # Fit the pipeline
     pipeline.fit(X, y)
     print(f"Fitted with {len(pipeline[:-1].get_feature_names_out())} feat")
+    # transformed_feature_names = [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing").replace("sklearn","").replace("  "," ").strip() for x in
+    #                          pipeline.named_steps['preprocessor'].get_feature_names_out()]  # remove prefixes ## ORIG
+
+    raw_feature_names = pipeline[:-1].get_feature_names_out() # new 
+
     transformed_feature_names = [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing").replace("sklearn","").replace("  "," ").strip() for x in
-                                 pipeline.named_steps['preprocessor'].get_feature_names_out()]  # remove prefixes
-    assert len(set(transformed_feature_names))>1,  transformed_feature_names                           
+                                 raw_feature_names]  # remove prefixes
+
     if get_feature_importances:                             
         # if do_shap:
         if shap_values is None:
@@ -842,6 +889,24 @@ def model_features(df: pd.DataFrame, FAST=False
         return res_dict
 
 
+import scipy.sparse as sp
+import pandas as pd
+
+def to_pandas(X_mat, feature_names): # added 
+    """
+    Convert a dense ndarray **or** a SciPy sparse matrix that comes out of
+    a ColumnTransformer into a pandas DataFrame with the right column names.
+    Keeps sparsity when possible.
+    """
+    if sp.issparse(X_mat):
+        return pd.DataFrame.sparse.from_spmatrix(X_mat, columns=feature_names)
+    if X_mat.ndim == 2 and X_mat.shape[1] == 1 and hasattr(X_mat[0, 0], "shape"):
+        # we received the "object-with-CSR-per-row" situation ➜ stack into one CSR
+        X_mat = sp.vstack(X_mat[:, 0]).tocsr()
+        return pd.DataFrame.sparse.from_spmatrix(X_mat, columns=feature_names)
+
+    return pd.DataFrame(X_mat, columns=feature_names)
+
 def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], shap_values, SAVE_OUTPUT=False, FEATURES_REPORT_PATH="feature_importance.csv",pval_ceiling=0.2,GET_EXTRA_STATS=True):
     # ### Get and filter top features (by utility)
     #
@@ -849,14 +914,29 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     #
     # * Note: `LIFT` here is relative to the _IPW subset_ (if that is being used).
     # * * TODO - we could reextract features over whole population (or subset of feats)... and get lift/feats on that
+
     # In[111]:
-    X_trans = pipeline.named_steps['preprocessor'].transform(X)  # ,output="pandas")
+    # X_trans = pipeline.named_steps['preprocessor'].transform(X)  # ,output="pandas") #ORIG
+
+     ## #  new: 
+    # if 'FS' in pipeline.named_steps: #  # also new
+    #     X_trans = pipeline.named_steps['FS'].transform(X)
+    # else:
+    #     X_trans = pipeline.named_steps['preprocessor'].transform(X)
+
+    X_trans = Pipeline(pipeline.steps[:-1]).transform(X) # also new, try
+
     assert X_trans.shape[1] == len(
         feature_names), "Transformed feature names mismatch: X_trans: {X_trans.shape[1]}; feature_names: {len(feature_names)}"
 
     print(X_trans.shape)
-    assert len(set(feature_names))>1,  feature_names   
-    X_trans = pd.DataFrame(X_trans, columns=feature_names)
+
+    # # Old – fails when X_trans is CSR
+    # X_trans = pd.DataFrame(X_trans, columns=feature_names)
+
+    # New
+    X_trans = to_pandas(X_trans, feature_names)
+
 
     # X_trans.columns = X_trans.columns.str.replace("missing","",case=False).str.replace("__"," ",regex=False).str.strip() # was enabled , disable here
     assert len(set(X_trans.columns)) == len(X_trans.columns), "non unique col names"
@@ -889,7 +969,7 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     feature_importance = feature_importance.merge(support_series, left_on="name", right_index=True, how="left")
     print(feature_importance.shape[0],"#all Features")
     feature_importance = feature_importance.loc[(feature_importance["p_val"] < pval_ceiling) | (
-            feature_importance["feature_importance"] >= 0.0001) | (feature_importance["corr"].abs() >= 0.01)].copy()
+            feature_importance["feature_importance"] >= 0.001) ].copy() # | (feature_importance["corr"].abs() >= 0.01)
     print(feature_importance.shape[0],"# minimally filtered features")
     # ## positive class support (non nans cases) as % per feature
     # pos_mask = (y>0)
@@ -911,8 +991,8 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     #     (feature_importance["feature_importance"] > 0) | (feature_importance["MutualInfoTarget"] >= 0.002) | (
     #             feature_importance["p_val"] < 0.01)].copy()
     # print(feature_importance.shape[0])
-    feature_importance = feature_importance.loc[(feature_importance["MutualInfoTarget"] >= 0.001) | (feature_importance["p_val"] <= pval_ceiling) | (
-            feature_importance["feature_importance"] >= 0.0001)].copy()
+    feature_importance = feature_importance.loc[(feature_importance["MutualInfoTarget"] >= 0.001) | (feature_importance["p_val"] < pval_ceiling) | (
+            feature_importance["feature_importance"] > 0.0005)].copy()
     print(feature_importance.shape[0], "# feat after second filt")
     ## added here - some cleaning of name. done here instead of earlier to allowfeat compat
     ## based on/replaces: X_trans.columns = X_trans.columns.str.replace("missing","",case=False).str.replace("__"," ",regex=False).str.strip()
@@ -952,7 +1032,7 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
         ## get lift of optimal split per feature; for selected subset
         print("Getting lift stats")
         df_lift = get_optimal_splits_results(X_trans.filter(feature_importance["raw_name"], axis=1), y, max_depth=3, criterion='gini',
-                                             min_support_pct=0.05, focus_on_lift=True, )
+                                             min_support_pct=1, focus_on_lift=True, )
         df_lift = df_lift.filter(['Feature', 'Lift (y==1)', 'Support',
                                   # 'Support (%)',
                                   'Target % Covered',
@@ -970,28 +1050,42 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
 def run_SHAP_pipeline(X, pipeline, shap_values, transformed_feature_names:[] = None, FAST=False,save_fig=False):
     # # Generate SHAP values
     if transformed_feature_names is None:
+        # if 'FS' in pipeline.named_steps: ##NOTE: could replace these with pipeline[:-1].get_feature_names_out() ? 
+        #     feature_names = pipeline.named_steps['FS'].get_feature_names_out()
+        # else:
+        #     feature_names = pipeline.named_steps['preprocessor'].get_feature_names_out()
+        feature_names = pipeline[:-1].get_feature_names_out()
+
+        # transformed_feature_names= [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing") for x in
+        #                          pipeline.named_steps['preprocessor'].get_feature_names_out()]
         transformed_feature_names= [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing") for x in
-                                 pipeline.named_steps['preprocessor'].get_feature_names_out()]
+                         feature_names]
+        print("transformed_feature_names is None")
+        # print("feature_names",feature_names) 
+        # print("transformed_feature_names",transformed_feature_names) 
     try:
         if FAST:
             explainer = shap.TreeExplainer(pipeline.named_steps['classifier'],
-                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(1_000, X.shape[0]))))  # .head(160_000) # try, alt
+                                           # pipeline.named_steps['preprocessor'].transform(X.sample(min(200, X.shape[0]))))  # ORIG, worked
+                                           Pipeline(pipeline.steps[:-1]).transform(X.sample(min(500, X.shape[0])))) # NEW
         else:
             explainer = shap.TreeExplainer(pipeline.named_steps['classifier'],
-                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(7_000, X.shape[0]))))
+                                           # pipeline.named_steps['preprocessor'].transform(X.sample(min(4_000, X.shape[0])))) #ORIG, worked
+                                           Pipeline(pipeline.steps[:-1]).transform(X.sample(min(6_000, X.shape[0])))) # NEW
 
     except:
         print("Non interventional explainer")  # needed if inuts are sparse/mixed sparse (due to ohe) maybe?
         explainer = shap.TreeExplainer(pipeline.named_steps['classifier'])
     print("Get Shap vals:")
     if FAST:
-        X2 = X.sample(n=min(6_000, X.shape[0]))
+        X2 = X.sample(n=min(2_000, X.shape[0]))
 
     else:
-        X2 = X.sample(n=min(60_000, X.shape[0]))
+        X2 = X.sample(n=min(85_000, X.shape[0]))
 
-    shap_values = explainer(pipeline.named_steps['preprocessor'].transform(X2))
-    shap.summary_plot(shap_values, feature_names=transformed_feature_names, max_display=30)
+    # shap_values = explainer(pipeline.named_steps['preprocessor'].transform(X2)) # ORIG
+    shap_values = explainer(Pipeline(pipeline.steps[:-1]).transform(X2)) # NEW
+    shap.summary_plot(shap_values, feature_names=transformed_feature_names, max_display=25)
 
     if save_fig: # not tested + need to handle figure name + setting import in parent function
         plt.savefig('SHAP_fig.svg', bbox_inches='tight', dpi=300)
@@ -1001,7 +1095,7 @@ def run_SHAP_pipeline(X, pipeline, shap_values, transformed_feature_names:[] = N
 def convert_ukbb_df_to_x_y(df, DROP_FEAT_COLS_LIST=[], K_diag_thresh_value=200, to_drop_text_cols_list=[],
                            pipe_delim_columns=['Illnesses of mother', 'Illnesses of siblings', 'Illnesses of adopted father']):
     X = df.drop(columns=["y", "eid", "YOB", "prediction_cutoff_year"] + to_drop_text_cols_list  # +DROP_FEAT_COLS_LIST - done after
-                , errors="ignore").dropna(axis=1, thresh=15 + (K_diag_thresh_value // 5)).copy()
+                , errors="ignore").dropna(axis=1, thresh=10 + (K_diag_thresh_value // 5)).copy()
     if "Sex" in X.select_dtypes(["O", "string"]).columns:
         X["Sex"] = (X["Sex"] == "Female").astype(int)  # make into number instead of string
     pipe_delim_columns = [x for x in pipe_delim_columns if x in X.columns]
