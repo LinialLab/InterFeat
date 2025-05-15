@@ -88,11 +88,11 @@ def ipw_downsampling(df: pd.DataFrame,
     return df.reset_index(drop=True)
 
 
-def make_target_df( DIAG_TIDY_PATH =  "../../ukbb-hack/df_diag_tidy.parquet",#"ukbb-hack/df_diag_tidy.parquet",  # ../../
+def make_target_df( DIAG_TIDY_PATH =  "../ukbb-hack/df_diag_tidy.parquet",#"ukbb-hack/df_diag_tidy.parquet",  # ../../
         # phenocodes_map_file_path="../../Phecode_map_v1_2_icd10_beta.csv.zip",  # ../../
 phenocodes_map_file_path="Phecode_map_v1_2_icd10_beta.csv.zip", #"../../Phecode_map_v1_2_icd10_beta.csv.zip"#"../../Phecode_map_v1_2_icd10_beta.csv.zip"
 phenocodes_def_file_path="phecode_definitions1.2.csv.zip",#"../../pphecode_definitions1.2.csv.zip"
-EHR_FEAT_TIDY_PATH = "../../df_ukbb_aux_tidy.parquet",
+EHR_FEAT_TIDY_PATH = "../df_ukbb_aux_tidy.parquet",
         TARGET_CODES_LIST=("K80", "K81", "K82")  ## Cholelithiasis = gallstones
         , FILTER_HAS_ANY_FUTURE_DIAGS=True  ## filter to keep cases with any future/post 2010 diagnoses = future record acquisition. May be leaky or unneeded
         , FILTER_HAS_ANY_DIAG_IDS=False
@@ -104,7 +104,7 @@ EHR_FEAT_TIDY_PATH = "../../df_ukbb_aux_tidy.parquet",
         , FILTER_FEMALES_ONLY=False # True ## Keep only females in data. For Gallstones - ROCauc is stable on this subset, as are few top features seemingly.
         , PIVOT_DIAGS_COL_NAME="phenotype"  # "code" #"phenotype"
         , K_diag_thresh_value=200  # 800#250#500
-        , FAST_SAMPLE_SIZE=15_000  # 60_000
+        , FAST_SAMPLE_SIZE=13_000  # 60_000
         , DO_IPW_SAMPLING=False
         # ## get diag feats by z-score, most extreme, or time since most recent value. Recentmost i much faster to extract:
         , GET_EXTREMETMOST_DIAGFEATS=False
@@ -816,6 +816,7 @@ def model_features(df: pd.DataFrame, FAST=False
     print(f"Fitted with {len(pipeline[:-1].get_feature_names_out())} feat")
     transformed_feature_names = [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing").replace("sklearn","").replace("  "," ").strip() for x in
                                  pipeline.named_steps['preprocessor'].get_feature_names_out()]  # remove prefixes
+    assert len(set(transformed_feature_names))>1,  transformed_feature_names                           
     if get_feature_importances:                             
         # if do_shap:
         if shap_values is None:
@@ -854,7 +855,9 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
         feature_names), "Transformed feature names mismatch: X_trans: {X_trans.shape[1]}; feature_names: {len(feature_names)}"
 
     print(X_trans.shape)
+    assert len(set(feature_names))>1,  feature_names   
     X_trans = pd.DataFrame(X_trans, columns=feature_names)
+
     # X_trans.columns = X_trans.columns.str.replace("missing","",case=False).str.replace("__"," ",regex=False).str.strip() # was enabled , disable here
     assert len(set(X_trans.columns)) == len(X_trans.columns), "non unique col names"
     try:
@@ -975,17 +978,17 @@ def run_SHAP_pipeline(X, pipeline, shap_values, transformed_feature_names:[] = N
                                            pipeline.named_steps['preprocessor'].transform(X.sample(min(1_000, X.shape[0]))))  # .head(160_000) # try, alt
         else:
             explainer = shap.TreeExplainer(pipeline.named_steps['classifier'],
-                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(11_000, X.shape[0]))))
+                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(7_000, X.shape[0]))))
 
     except:
         print("Non interventional explainer")  # needed if inuts are sparse/mixed sparse (due to ohe) maybe?
         explainer = shap.TreeExplainer(pipeline.named_steps['classifier'])
     print("Get Shap vals:")
     if FAST:
-        X2 = X.sample(n=min(7_000, X.shape[0]))
+        X2 = X.sample(n=min(6_000, X.shape[0]))
 
     else:
-        X2 = X.sample(n=min(120_000, X.shape[0]))
+        X2 = X.sample(n=min(60_000, X.shape[0]))
 
     shap_values = explainer(pipeline.named_steps['preprocessor'].transform(X2))
     shap.summary_plot(shap_values, feature_names=transformed_feature_names, max_display=30)

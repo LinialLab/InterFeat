@@ -26,6 +26,34 @@ config_gall = {
     # "DIAG_TIDY_TABLE_PATH" : "../../df_ukbb_aux_tidy.parquet", #"../ukbb-hack/df_diag_tidy.parquet",
     }
 
+config_gallbladder2 = {
+    "TARGET_CODES_LIST" :("K80",),  ## Cholelithiasis = Gallbladder disease
+    "do_IPW": True,
+    "do_boruta_fs" : False,
+    "K_IPW_RATIO":10,
+    'targets': [
+        "Cholelithiasis",
+        # "Gallstone",
+        "Gallbladder disease",
+        # "cholecystitis",
+        # "Cholangitis"
+        ],
+    "FEATURES_REPORT_PATH":"gallbladder_ipw_broad_feature_report.csv",
+    'QUERY_CANDIDATES_FILE': 'candidate_novel_cuis_gall.csv',
+    "CANDIDATE_NOVEL_CUIS_FILEPATH": "candidate_novel_cuis_gall.csv", # output path for features/util # same as QUERY_CANDIDATES_FILE ? 
+    'DO_MINI_COMBINED_PATH_FILT': False
+    ,'SAVE_OUTPUTS': True,
+    "TARGET_NAME" :"Cholelithiasis, Gallbladder",
+    # "additional_target_cui_terms_list" : ["C0008325", "C0008311"],
+    
+    'OUTPUT_RES_PREFIX': 'gallbladder_',
+    # 'full_results_filename': 'candidates_search_results.csv', # OUTPUT_RES_PREFIX is added atop this 
+    # 'filtered_results_filename': 'review_interesting_candidates_results.csv',# OUTPUT_RES_PREFIX is added atop this 
+    # # 'cooc_count_filter_val': 10,  'SIGNIFICANT_PVAL': 0.3,
+    # "DIAG_TIDY_TABLE_PATH" : "../../df_ukbb_aux_tidy.parquet", #"../ukbb-hack/df_diag_tidy.parquet",
+    }
+
+
 
 config_asthma = {
     "TARGET_CODES_LIST": ("J45"),

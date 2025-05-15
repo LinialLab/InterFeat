@@ -9,8 +9,6 @@ from arfs.preprocessing import OrdinalEncoderPandas
 from sentence_transformers import SentenceTransformer
 import torch
 import pandas as pd
-
-import pandas as pd
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier # could also try rulesFit ? 
 from sklearn.model_selection import train_test_split
@@ -713,7 +711,7 @@ def link_kg_concepts(FEATURES_REPORT_PATH:str, CANDIDATE_NOVEL_CUIS_FILEPATH:str
                                             "Average" , "Comparison" , "Lost" , "Yes - Presence findings", 
                                             "Pharmaceutical Preparations","Physicians","Mother (person)","Father (person)","Severe (severity modifier)",
                                             ]
-                     , input_kg_path="../../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
+                     , input_kg_path="../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
                          "T078", ], sem_similarity_threshhold_score=0.15, # 0.15
                      top_cutoff_simMin = 0.39,top_cutoff_kgHit = 2):
 
@@ -1124,8 +1122,8 @@ def link_kg_concepts_slim(FEATURES_REPORT_PATH, CANDIDATE_NOVEL_CUIS_FILEPATH, T
                                             "Average" , "Comparison" , "Lost" , "Yes - Presence findings", 
                                             "Pharmaceutical Preparations","Physicians","Mother (person)","Father (person)","Severe (severity modifier)",
                                             ]
-                     , input_kg_path="../../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
-                         "T078", ], sem_similarity_threshhold_score=0.14, # 0.15
+                     , input_kg_path="../SemMed/predications.parquet", EXCLUDE_TUIS_LIST = ["T079", "T093", "T094", "T095", "T170", "T204", "T201", "T065",
+                         "T078", ], sem_similarity_threshhold_score=0.15,
                      # top_cutoff_simMin = 0.39,top_cutoff_kgHit = 2,
                      FAST=False,
                     return_df=True

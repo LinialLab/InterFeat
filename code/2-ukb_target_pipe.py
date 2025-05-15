@@ -585,7 +585,7 @@ def model_features(df: pd.DataFrame, FAST=False
         mi_vals_mask = mutual_info_classif(X_encoded, y,  # n_neighbors=5,
                                            discrete_features=discrete_features
                                            # discrete_features=X_encoded.select_dtypes(["O","category"]).columns # fails
-                                           ) > 0.0003
+                                           ) > 0.001
         print(sum(mi_vals_mask))
         keep_feats = list(set(X_encoded.loc[:, mi_vals_mask].columns.tolist() + ["Sex", "Age"] + list_features_high_cardinality))
 
@@ -641,8 +641,8 @@ def model_features(df: pd.DataFrame, FAST=False
             # LGBMClassifier(random_state=42, verbose=-1),
             estimator=CatBoostClassifier(random_state=42, verbose=0),
             # LGBMClassifier(random_state=42)#, verbose=-1),
-            n_estimators=200 if FAST else 500 # "auto",  # 600,#
-            ,keep_weak=True, perc=50, max_iter=8 if FAST else 23,
+            n_estimators=150 if FAST else 400 # "auto",  # 600,#
+            ,keep_weak=True, perc=50, max_iter=5 if FAST else 17,
             random_state=0, importance="fastshap", )
         # find all relevant features
         bs_feat_selector.fit(X=X_encoded, y=y)  # 100
@@ -736,7 +736,7 @@ def model_features(df: pd.DataFrame, FAST=False
         ('onehot', OneHotEncoder(handle_unknown='ignore', min_frequency=20,
                                  sparse_output=False,  ## sparse outputs can cause issues wit hshap maybe?
                                  max_categories=95)),
-        # ("FS_cat",SelectFdr(alpha=0.9)) # score_func=chi2,
+        ("FS_cat",SelectFdr(alpha=0.9)) # score_func=chi2,
         # ("FS_cat",SelectKBest(score_func=chi2, k=200)),
         ],
         # memory="cat_pipeline_cache"
@@ -746,10 +746,10 @@ def model_features(df: pd.DataFrame, FAST=False
     text_pipeline = Pipeline(steps=[
         # ('imputer', SimpleImputer(strategy='constant', fill_value='missing')), # causes error
         # ## CountVectorizer
-        ('vectorizer', TfidfVectorizer(min_df=30, max_df=0.9, ngram_range=(1, 2), max_features=200,
+        ('vectorizer', TfidfVectorizer(min_df=25, max_df=0.85, ngram_range=(1, 2), max_features=700,
                                        # smooth_idf=False,sublinear_tf=True
                                        )),
-        ("FS_text", SelectFdr(alpha=0.6))  # score_func=chi2,
+        ("FS_text", SelectFdr(alpha=0.5,score_func=chi2))  # score_func=chi2,
         ],
         # memory="text_pipeline_cache"
         )
@@ -792,6 +792,7 @@ def model_features(df: pd.DataFrame, FAST=False
     print(f"Fitted with {len(pipeline[:-1].get_feature_names_out())} feat")
     transformed_feature_names = [x.replace("num__", "").replace("cat__", "").replace("text_", "").replace("missingindicator", "missing") for x in
                                  pipeline.named_steps['preprocessor'].get_feature_names_out()]  # remove prefixes
+    assert len(set(transformed_feature_names))>1,  transformed_feature_names    
     # if do_shap:
     shap_values = run_SHAP_pipeline(X, pipeline, shap_values, transformed_feature_names, FAST)
     ## plt.savefig('fig_tes1.svg', bbox_inches='tight',dpi=100)
@@ -810,7 +811,8 @@ def model_features(df: pd.DataFrame, FAST=False
         return res_dict
 
 
-def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], shap_values, SAVE_OUTPUT=False, OUTPUT_FEATURE_REPORT_NAME="feature_importance.csv"):
+def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], shap_values, 
+    SAVE_OUTPUT=False, OUTPUT_FEATURE_REPORT_NAME="feature_importance.csv"):
     # ### Get and filter top features (by utility)
     #
     # Q: Missing features: maybe remove indicator maybe from name?
@@ -818,13 +820,16 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     # * Note: `LIFT` here is relative to the _IPW subset_ (if that is being used).
     # * * TODO - we could reextract features over whole population (or subset of feats)... and get lift/feats on that
     # In[111]:
+    assert len(set(feature_names))>1,  feature_names   
     X_trans = pipeline.named_steps['preprocessor'].transform(X)  # ,output="pandas")
     assert X_trans.shape[1] == len(
         feature_names), "Transformed feature names mismatch: X_trans: {X_trans.shape[1]}; feature_names: {len(feature_names)}"
 
     print(X_trans.shape)
-    X_trans = pd.DataFrame(X_trans, columns=feature_names)
+
     # X_trans.columns = X_trans.columns.str.replace("missing","",case=False).str.replace("__"," ",regex=False).str.strip() # was enabled , disable here
+    
+    X_trans = pd.DataFrame(X_trans, columns=feature_names)
     assert len(set(X_trans.columns)) == len(X_trans.columns), "non unique col names"
     try:
         vals = np.abs(shap_values.values).mean(0)
@@ -834,11 +839,9 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
 
     feature_importance = pd.DataFrame(list(zip(feature_names, vals)),
                                       columns=['name', 'feature_importance'])
-    ## Add fdr P-value.
-    ## todo: is it uncorrected p-value?
-    ## hope order is the same?
+    ## Add UNCORRECTED P-value.
     fs = SelectFdr().fit(SimpleImputer().fit_transform(X_trans), y)
-    feature_importance["p_val"] = fs.pvalues_
+    feature_importance["p_val"] = fs.pvalues_ # uncorrected pval
     # # drop features unused by this model- optional. P value doesn't mean features used (e.g. if redundant)
     feature_importance = feature_importance.sort_values(by=['feature_importance'],
                                                         ascending=False).reset_index(drop=True).round(5)
@@ -851,8 +854,8 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     support_series.name = "support"
     feature_importance = feature_importance.merge(support_series, left_on="name", right_index=True, how="left")
     print(feature_importance.shape[0],"#all Features")
-    feature_importance = feature_importance.loc[(feature_importance["p_val"] < 0.6) | (
-            feature_importance["feature_importance"] > 0) | (feature_importance["corr"].abs() >= 0.01)].copy()
+    feature_importance = feature_importance.loc[(feature_importance["p_val"] < 0.4) | (
+            feature_importance["feature_importance"] > 0.00001) | (feature_importance["corr"].abs() >= 0.01)].copy()
     print(feature_importance.shape[0],"# minimally filtered features")
     # ## positive class support (non nans cases) as % per feature
     # pos_mask = (y>0)
@@ -874,7 +877,7 @@ def make_feature_importance_utility_selection(X, y, pipeline, feature_names:[], 
     #     (feature_importance["feature_importance"] > 0) | (feature_importance["MutualInfoTarget"] >= 0.002) | (
     #             feature_importance["p_val"] < 0.01)].copy()
     # print(feature_importance.shape[0])
-    feature_importance = feature_importance.loc[(feature_importance["MutualInfoTarget"] >= 0.0009) | (feature_importance["p_val"] <= 0.2) | (
+    feature_importance = feature_importance.loc[(feature_importance["MutualInfoTarget"] > 0.0009) | (feature_importance["p_val"] <= 0.1) | (
             feature_importance["feature_importance"] >= 0.0005)].copy()
     print(feature_importance.shape[0], "# feat after second filt")
     ## added here - some cleaning of name. done here instead of earlier to allowfeat compat
@@ -940,17 +943,17 @@ def run_SHAP_pipeline(X, pipeline, shap_values, transformed_feature_names:[] = N
                                            pipeline.named_steps['preprocessor'].transform(X.sample(min(1_000, X.shape[0]))))  # .head(160_000) # try, alt
         else:
             explainer = shap.TreeExplainer(pipeline.named_steps['classifier'],
-                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(12_000, X.shape[0]))))
+                                           pipeline.named_steps['preprocessor'].transform(X.sample(min(8_000, X.shape[0]))))
 
     except:
         print("Non interventional explainer")  # needed if inuts are sparse/mixed sparse (due to ohe) maybe?
         explainer = shap.TreeExplainer(pipeline.named_steps['classifier'])
     print("Get Shap vals:")
     if FAST:
-        X2 = X.sample(n=min(8_000, X.shape[0]))
+        X2 = X.sample(n=min(5_000, X.shape[0]))
 
     else:
-        X2 = X.sample(n=min(110_000, X.shape[0]))
+        X2 = X.sample(n=min(70_000, X.shape[0]))
 
     shap_values = explainer(pipeline.named_steps['preprocessor'].transform(X2))
     shap.summary_plot(shap_values, feature_names=transformed_feature_names, max_display=30)
@@ -989,7 +992,7 @@ def convert_ukbb_df_to_x_y(df, DROP_FEAT_COLS_LIST=[], K_diag_thresh_value=200, 
     #     X[c] = X[c].astype("category")
     # print(X.shape[1],"Without duplicate feats")
     ## this is duplicated down below
-    m = X.filter(text_cols_list, axis=1).nunique() > 90  # 70
+    m = X.filter(text_cols_list, axis=1).nunique() > 95  # 70
     list_features_high_cardinality = list(X.filter(text_cols_list, axis=1).nunique()[m].index)
     y = df["y"].copy()  # .reset_index(drop=True)
     print(df["y"].agg(["mean", "sum", "size"]).round(3))
