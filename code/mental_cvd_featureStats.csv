@@ -1,0 +1,13 @@
+,n_with,y1_with,y0_with,lift,odds_ratio,p_value
+stress_anxiety_nervous,22171,1757,20414,0.559,0.521,7.813489426288748e-173
+Other mental disorder,10197,2397,7800,1.734,1.96,5.055367718652104e-156
+"Panic attack caused by medical condition, medication, drugs or alcohol",3256,657,2599,1.466,1.585,1.681450423875389e-23
+Anxiety disorder,2290,432,1858,1.368,1.455,2.0753459616989934e-11
+ptsd,2006,190,1816,0.684,0.653,3.2971126788200462e-09
+Altered mental status,858,173,685,1.461,1.58,3.032252454851322e-07
+Mental health conditions ever diagnosed by a professional,386763,53479,333284,1.495,1.564,0.000293728
+"Agorophobia, social phobia, and panic disorder",350,70,280,1.448,1.568,0.00141903
+"stress incontinence, female",3804,463,3341,0.88,0.864,0.00292333
+Develomental delays and disorders,68,14,54,1.49,1.659,0.11281080747636685
+"Z73.3 - Stress, not elsewhere classified",111,21,90,1.369,1.482,0.12907013153523392
+Anxiety disorders,164,28,136,1.236,1.302,0.2145870872086522

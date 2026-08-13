@@ -1,0 +1,9 @@
+target,num_unique_input_features,num_features_without_KG_link,num_features_with_KG_link,percent_features_with_KG_link,percent_features_within_1_hop,num_features_within_1_hop,percent_features_within_2_hop,num_features_within_2_hop,num_cases_post_cutoff,percent_cases_after_cutoff_year,list_of_target_cuis,num_unique_target_cuis,df_kg_sep_size,frac_postCutoffYear_dist1,sum_postCutoffYear_dist1,count_before_CutoffYear_dist1
+"GALLSTONES, Cholelithiasis",854,53,801,25.34,25.22,202,93.38,748,33,0.16,"['C0008311', 'C0008325', 'C0242216', 'C0008350', 'C0947622']",5,1206,0.16,33,169
+Gout,994,74,920,29.89,29.78,274,95.65,880,58,0.21,['C0018099'],1,935,0.21,58,216
+Coeliac disease,639,57,582,37.29,36.94,215,95.19,554,20,0.09,"['C5139492', 'C0007570']",2,1613,0.09,20,195
+Spine degeneration,1247,117,1130,28.58,28.14,318,92.92,1050,63,0.2,"['C0024031', 'C0158252', 'C0158266', 'C0423673', 'C0021818', 'C0038019', 'C0850918']",7,1695,0.2,63,255
+Esophageal cancer,482,37,445,20.45,20.45,91,94.38,420,19,0.21,"['C0014859', 'C0152018', 'C0546837']",3,1367,0.21,19,72
+Heart attack,704,61,643,50.39,49.77,320,94.71,609,18,0.06,"['C0027051', 'C0155668']",2,4502,0.06,18,302
+Retinal Vein Occlusion,428,28,400,2.5,2.5,10,91.75,367,0,0.0,['C0035327'],1,57,0.0,0,10
+Depression,1397,183,1214,44.56,44.23,537,92.34,1121,60,0.11,"['C0011570', 'C0011581', 'C0344315']",3,6547,0.11,60,471
